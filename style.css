@@ -1,0 +1,66 @@
+body {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+body div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+input {
+    width: 60vw;
+    height: 60px;
+    padding: 9px;
+    text-align: center;
+    /* padding: 8px; */
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    /* margin-bottom: 10px; */
+    background-color: #ddd;
+    color: #333;
+    font-size: 30px;
+    outline: none;
+    caret-color: palevioletred;
+    
+}
+button {
+    width: 85px;
+    height: 77px;
+    /* display: inline;
+    justify-items: center; */
+    background-color: #ddd;
+    margin: 0;
+}
+
+.search-icon {
+    width: 65px;
+    font-size: 50px;
+    color: #666;
+    cursor: pointer;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+.child{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+    /* border: 1px solid black; */
+}
+.wiki-result{
+    list-style: none;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+.wiki-result a{
+    color: rgb(0, 255, 0);
+    text-decoration: none;
+}
