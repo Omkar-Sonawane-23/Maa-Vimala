@@ -36,6 +36,16 @@ button {
     margin: 0;
 }
 
+#input_text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+
+}
+
 .search-icon {
     width: 65px;
     font-size: 50px;
@@ -63,4 +73,14 @@ button {
 .wiki-result a{
     color: rgb(0, 255, 0);
     text-decoration: none;
+}
+#content li{
+    width: 55rem;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ddd;
+    color: #333;
+    font-size: 20px;
 }

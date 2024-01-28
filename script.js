@@ -21,6 +21,13 @@ Body.addEventListener("keydown", function (e) {
   )
 })
 
+// function dropDownHandeler(params) {
+//   Body.addEventListener("keydown", function (e) {
+//     const dropdowncontent = document.getElementById("content");
+    
+//   })
+// }
+
 async function showCalcResult(params) {
   console.log(params);
   let result = document.getElementById("result");
