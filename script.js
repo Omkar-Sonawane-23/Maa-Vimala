@@ -4,6 +4,11 @@ let keynum;
 Input.value = "";
 
 Body.addEventListener("keydown", function (e) {
+  const searchcontainer = document.getElementsByClassName("search-bar")[0];
+  if (event.key.length === 1 && event.key.match(/[a-z]/i)) {
+    searchcontainer.style.width = '50vw';
+    searchcontainer.style.transition = 'width 0.2s ease-in-out';
+  }
   Input.focus();
   if (window.event) {
     keynum = e.keyCode;
@@ -14,6 +19,8 @@ Body.addEventListener("keydown", function (e) {
   Input.addEventListener("input", function (e) {
     if (Input.value == "") {
       document.getElementById("content").innerHTML = "";
+      document.getElementById('result').innerHTML = '';
+      searchcontainer.style.width = '4.5vw';
     } else {
       // updateList();
     }
@@ -24,9 +31,11 @@ Body.addEventListener("keydown", function (e) {
 // function dropDownHandeler(params) {
 //   Body.addEventListener("keydown", function (e) {
 //     const dropdowncontent = document.getElementById("content");
-    
+
 //   })
 // }
+
+
 
 async function showCalcResult(params) {
   console.log(params);
@@ -42,9 +51,12 @@ async function showWordSearchResult(params) {
   } else {
     let res = result.innerHTML = "<h1>" + params.title + "</h1>";
   }
-  console.log(res);
 }
 async function showWikiResult(params) {
+  document.getElementById('loader').classList.add('loader')
+    setTimeout(function () {
+      document.getElementById('loader').classList.remove('loader')
+    }, 1000);
   let result = document.getElementById("result");
   result.innerHTML = "";
   let list = params.query.search;
@@ -66,6 +78,10 @@ function handleDropDown(search) {
     showCalcResult(performCalculation(search));
   } else if (hasOnlyOneWord(search)) {
     console.log("Word Search");
+    document.getElementById('loader').classList.add('loader')
+    setTimeout(function () {
+      document.getElementById('loader').classList.remove('loader')
+    }, 1000);
     performWordSearch(search)
   } else if (search.includes("set") || search.includes("add") || search.includes("todo")) {
     console.log("Set Todo");
@@ -77,8 +93,12 @@ function handleDropDown(search) {
     performGoogleSearch(search);
   } else if (search.includes("youtube") || search.includes("search youtube") || search.includes("youtube search")) {
     performYouTubeSearch(search);
-  } else if (search.includes("wikipedia") || search.includes("search wikipedia") || search.includes("wikipedia search")) {
+  } else if (search.includes("wikipedia") || search.includes("search wikipedia") || search.includes("wikipedia search") || search.includes("wiki")) {
     performWikipediaSearch(search);
+    document.getElementById('loader').classList.add('loader')
+    setTimeout(function () {
+      document.getElementById('loader').classList.remove('loader')
+    }, 1000);
   }
 }
 function hasOnlyOneWord(inputString) {
@@ -138,10 +158,12 @@ function performWolframAlphaSearch(search) {
   search = "";
 }
 function performWikipediaSearch(search) {
-  fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=5&srsearch=${encodeURIComponent(search)}`).then(response => { response.json().then(data => { 
-    console.log(data);
-    showWikiResult(data) ;
-  }) })
+  fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=5&srsearch=${encodeURIComponent(search)}`).then(response => {
+    response.json().then(data => {
+      console.log(data);
+      showWikiResult(data);
+    })
+  })
   search = "";
 }
 function performWhetherCheck(search) {
