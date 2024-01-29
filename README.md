@@ -15,6 +15,17 @@
 5. ### Whether Information
 4. ### Set ToDo's ( ! Coming Soon )
 
+## How To add This on new Tab
+```
+git clone https://github.com/Web403/Maa-Vimala
+
+path/to/Maa-Vimala/index.html
+Go To Browser -> Setting search for Home page
+set to Custom Url
+Paste your Path To Index File.
+
+```
+
 ## How To Use It?
 1. Just Start Typing 
 2. Press Enter After Complete.
