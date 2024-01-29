@@ -137,7 +137,8 @@ function performToDoUpdate(cmd) {
   }
 }
 function performGoogleSearch(search) {
-  document.location = `https://www.google.com/search?q=${encodeURIComponent(search)}`
+  let res = search.split("google");
+  document.location = `https://www.google.com/search?q=${encodeURIComponent(res[1].trim())}`
   search = "";
 }
 function performYouTubeSearch(search) {
