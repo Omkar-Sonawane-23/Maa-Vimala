@@ -127,13 +127,14 @@ button {
     transform: translateY(-50%);
     cursor: pointer;
     border: none;
-    color: rgb(196, 196, 196);
+    color: rgb(255, 255, 255);
   }
 
 .nav-info{
   position: absolute;
   right: 35px;
   padding: 0;
+  top: 5px;
 }
 #time{
   font-size: 1.8rem;
@@ -151,23 +152,39 @@ button {
   display: flex;
   margin-top: -1px;
 }
+#link{
+  float: right;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+}
+#link a{
+  /* text-decoration: none; */
+  color: #1b1c6d;
+
+}
 
   @media screen and (max-width: 600px){
     body{
         background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
         color: #ddd;
         background-repeat: no-repeat;
-        background-size: cover;
-        background-color: #333;
+        background-size:100vh;
+        background-color: #fcfcfc;
         padding: 10px;
     }
     .search-bar {
-        position: absolute;
+      position: absolute;
       font-size: 1.5rem;
       top: 10rem;
-      right: -7rem;
+      right: -5rem;
+      color: white;
+      border-bottom: 2px solid white;
     }
     .search-icon {
       visibility: hidden;
+    }
+    .search-container{
+      border-bottom: 2px solid rgb(196, 196, 196);
     }
   }
