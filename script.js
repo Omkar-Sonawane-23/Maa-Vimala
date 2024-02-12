@@ -89,7 +89,7 @@ function handleDropDown(search) {
   } else if (search.includes("remove") || search.includes("delete") || search.includes("remove todo")) {
     console.log("remove Todo");
     performToDoUpdate(search);
-  } else if (search.includes("google") || search.includes("search google") || search.includes("how") || search.includes("what") || search.includes("why") || search.includes("when") || search.includes("where") || search.includes("who") || search.includes("which") || search.includes("whom") || search.includes("whose") || search.includes("google search")) {
+  } else if (search.includes("google") || search.includes("search google") || search.includes("how") || search.includes("what") || search.includes("why") || search.includes("how") || search.includes("when") || search.includes("where") || search.includes("who") || search.includes("which") || search.includes("whom") || search.includes("whose") || search.includes("google search")) {
     performGoogleSearch(search);
   } else if (search.includes("youtube") || search.includes("search youtube") || search.includes("youtube search")) {
     performYouTubeSearch(search);
