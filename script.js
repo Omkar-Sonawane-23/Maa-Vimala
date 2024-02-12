@@ -101,7 +101,7 @@ function handleDropDown(search) {
     }, 1000);
   }
   else {
-    performGoogleSearch(search);
+    performGoogleSearch(search , true);
   }
 }
 function hasOnlyOneWord(inputString) {
@@ -139,9 +139,13 @@ function performToDoUpdate(cmd) {
     console.log("The word to remove is not in the list.");
   }
 }
-function performGoogleSearch(search) {
+function performGoogleSearch(search, isit) {
   let res = search.split("google");
-  document.location = `https://www.google.com/search?q=${encodeURIComponent(res[1].trim())}`
+  if(isit){
+    document.location = `https://www.google.com/search?q=${encodeURIComponent(search)}`
+  }else{
+    document.location = `https://www.google.com/search?q=${encodeURIComponent(res[1].trim())}`
+  }
   search = "";
 }
 function performYouTubeSearch(search) {
