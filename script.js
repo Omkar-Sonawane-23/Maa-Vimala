@@ -100,6 +100,9 @@ function handleDropDown(search) {
       document.getElementById('loader').classList.remove('loader')
     }, 1000);
   }
+  else {
+    performGoogleSearch(search);
+  }
 }
 function hasOnlyOneWord(inputString) {
   var wordRegex = /^\w+$/;
