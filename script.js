@@ -3,6 +3,37 @@ let Body = document.getElementById("body");
 let keynum;
 Input.value = "";
 
+var modal = document.getElementById("settings-modal");
+var settingsBtn = document.getElementById("settings-btn");
+
+var span = document.getElementsByClassName("close")[0];
+
+settingsBtn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+function changeBackground() {
+  var body = document.getElementById("body");
+  var newBackground = prompt("Enter URL of the new background image:");
+  if (newBackground) {
+    body.style.backgroundImage = `url('${newBackground}')`;
+  }
+}
+
+var changeBgBtn = document.getElementById("change-bg-btn");
+
+changeBgBtn.onclick = function() {
+  changeBackground();
+}
+
+
 Body.addEventListener("keydown", function (e) {
   const searchcontainer = document.getElementsByClassName("search-bar")[0];
   if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {

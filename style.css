@@ -188,3 +188,55 @@ button {
       border-bottom: 2px solid rgb(196, 196, 196);
     }
   }
+
+  #settings-btn {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    height: fit-content;
+  }
+  
+  #settings-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+
+/* Style the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  color: black;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
