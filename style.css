@@ -1,17 +1,29 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    /* background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
     color: #ddd;
+   background-image: url(https://img.freepik.com/free-photo/3d-sea-landscape_23-2151145025.jpg?size=626&ext=jpg&ga=GA1.1.1870582971.1713757291&semt=sph);
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #333;
-    padding: 10px;
+    background-color: #5a5656;
+    padding: 15px;
     border-radius: 5px;
-}
+    color:black;
+    /* font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+    font-family: "Merriweather Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    
+    
+} 
 body div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 input {
@@ -133,40 +145,112 @@ button {
 .nav-info{
   position: absolute;
   right: 35px;
-  padding: 0;
-  top: 5px;
+  padding:5%;
+  /* top: 0.5px; */
+  bottom:35%;
+  font-size: 20px;
+  /* display: inline; */
+  width: 20%;
+  height: 30%;
+  margin-left: 20%;
+  /* text-align: right; */
+  background-color:rgba(196, 196, 196, 0.747);
+  letter-spacing: 5px;
+  border-radius: 40%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  box-shadow: 0 8px 32px 0 rgba(121, 128, 230, 0.37); 
+  backdrop-filter: blur(8px); 
+  border-radius: 10px; 
+  border: 1px solid rgba(247, 217, 217, 0.18); 
 }
 #time{
   font-size: 1.8rem;
   margin-top: 5px;
+  margin-left:2%;
+  padding:5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold; 
+  text-shadow: 1px 1px 2px rgb(0, 0, 0,0.5)
 }
 #date{
   font-size: 1.4rem;
   margin-top: -70px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold; 
+  text-shadow: 1px 1px 2px rgb(0, 0, 0,0.5)
+  /* text-align: right; */
 }
 #whether{
   font-size: 1.2rem;
   margin-top: -20px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+#wind{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color:rgb(0, 0, 0); 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 #nav-extra{
   display: flex;
   margin-top: -1px;
+  color: rgba(0, 0, 0, 0);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+}
+#title{
+  letter-spacing: 5px;
+  top:5%;
+  /* text-align: center; */
+  font-weight: 800;
+  margin:2px 20px;
+  
+  /* line-height: 4px; */
 }
 #link{
   float: right;
   font-size: 1.5rem;
   position: absolute;
-  bottom: 0;
+  top: 65%;
+  margin:10% 42%;
+  width:10%;
+  height: 10%;
+  padding:10px 10px;
+  border-radius: 50px;
+  text-align: center;
+  background-color:rgb(255, 209, 205);
+  /* border-color: #333; */
 }
 #link a{
   /* text-decoration: none; */
-  color: #1b1c6d;
+  color:rgb(212, 134, 134);
+  /* border-color: #333; */
+  text-decoration: none;
 
+}
+#link a:hover{
+  color:white;
+  transition: 0.3s;
 }
 
   @media screen and (max-width: 600px){
     body{
-        background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        /* background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+       background-image: url(https://img.freepik.com/free-photo/abstract-paint-background-with-multi-colored-watercolor-painting-generated-by-ai_188544-15558.jpg);
         color: #ddd;
         background-repeat: no-repeat;
         background-size:100vh;
