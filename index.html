@@ -49,8 +49,14 @@
         <div id="loader"></div>
         <div class="result" id="result">
         </div>
-        <div id="link">
-            <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
+        <div class="sec">
+            <div class="header">
+                <h1>News</h1>
+                <div id="link">
+                    <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
+                </div>
+            </div>
+            <div id="news"></div>
         </div>
     </div>
     <script>
@@ -94,6 +100,31 @@
             wind.innerText = "Wind : " + wdata.current.wind_speed_10m + " KM/H";
         }
         getlocation()
+
+        async function getNews() {
+            const response = await fetch(`https://riad-news-api.vercel.app/api/news`);
+            const news1 = await response.json();
+            console.log(news1);
+
+            let newsDiv = document.getElementById('news');
+            news1.data.forEach(element => {
+                const newsCard = document.createElement('div');
+                newsCard.classList.add('news-card');
+
+                const title = document.createElement('span');
+                title.id = 'title';
+                title.innerHTML = `<h3><b>${element.title}</b></h3>`;
+
+                const description = document.createElement('span');
+                description.id = 'description';
+                description.textContent = element.description;
+
+                newsCard.appendChild(title);
+                newsCard.appendChild(description);
+                newsDiv.appendChild(newsCard);
+                });
+        }
+        getNews();
     </script>
     <script src="script.js"></script>
 </body>
