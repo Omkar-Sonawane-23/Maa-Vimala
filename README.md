@@ -1,4 +1,4 @@
-![GirlScript Season of Code](https://github.com/pankaj-bind/Maa-Vimala/assets/73558583/c0195539-fcd1-42b0-a68c-862cbbb31b14)
+![GirlScript Summer of Code](https://github.com/pankaj-bind/Maa-Vimala/assets/73558583/c0195539-fcd1-42b0-a68c-862cbbb31b14)
 
 <h2 align="center" style="font-size: 24px;"> Maa-Vimala </h2>
 
