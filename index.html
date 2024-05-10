@@ -9,29 +9,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<div>
-    <h1>Maa-Vimala</h1>
-    <div class="nav-info">
-        <p id="time">22 : 33 AM</p>
-        <div class="nav-info-ele">
-            <p id="date">24 Aug 2022</p>
-            <div id="nav-extra">
-                <span id="whether">Temp : c</span>
-                <span id="wind">Wind : 17.65</span>
+<body id="body" class="montserrat">
+    <div class="montserrat">
+        <h1 class="Title">Maa-Vimala</h1>
+        <div class="nav-info">
+            <p id="time">22 : 33 AM</p>
+            <div class="nav-info-ele">
+                <p id="date">24 Aug 2022</p>
+                <div id="nav-extra">
+                    <span id="whether">Temp :c</span>
+                    <span id="wind">Wind : 17.65</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<body id="body">
     <div>
         <div>
             <div>
-                <h1>Start Typing To Search...</h1>
+                <h1 class="text-search">Start Typing To Search...</h1>
             </div>
             <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
-                <input type="text" id="input_text" class="search-bar" placeholder="">
+                <input type="text" id="input_text" class="search-bar" placeholder="">          
                 <i class="fas fa-search search-icon"></i>
             </div>
         </div>
@@ -90,7 +89,7 @@
             const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`);
             const wdata = await response.json();
             console.log(wdata);
-            whether.innerText = "Temp : " + wdata.current.temperature_2m + " c";
+            whether.innerText = "Temp : " + wdata.current.temperature_2m + "°c";
             wind.innerText = "Wind : " + wdata.current.wind_speed_10m + " KM/H";
         }
         getlocation()
