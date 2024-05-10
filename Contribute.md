@@ -24,6 +24,70 @@ All types of contributions are encouraged and valued. See the [Table of Contents
   - [Commit Messages](#commit-messages)
 - [Join The Project Team](#join-the-project-team)
 
+## Getting Started
+
+If you're new to contributing to open-source projects, don't worry! Here's how you can get started:
+
+1. **Fork the Repository**: Fork the Maa-Vimala repository to your GitHub account.
+
+2. **Clone the Repository**: Clone the forked repository to your local machine using Git.
+
+    ```
+    git clone https://github.com/your-username/Maa-Vimala.git
+    ```
+
+3. **Open project**: Open the project directory.
+
+    ```
+    cd Maa-Vimala
+    ```
+4. **Create a new branch**: To create a new branch for your profile, run the following command:
+
+    ```
+    git checkout -b add-profile
+    ```
+
+5. **Make Changes**: Make your desired changes to the codebase or documentation.
+
+6. **Test Your Changes**: Test your changes locally to ensure everything works as expected.
+
+7. **Add your changed files**: Add changed files to the stage by running the following command:
+
+    ```
+    git add .
+    ```
+
+8. **Commit Your Changes**: Commit your changes with descriptive commit messages.
+
+    ```
+    git commit -m "message"
+    ```
+
+9. **Push Changes**: Push your changes to your forked repository.
+
+    ```
+    git push
+    ```
+
+10. **Create a Pull Request**: Open a pull request from your forked repository to the main Eduford-university repository. Provide a clear description of your changes in the pull request. Follow these steps
+    - Add the issue number, that you have been assigned[Formate:- Isuue number #(your issue number)]
+    - Brief description of the changes
+
+## Code Style Guidelines
+
+To maintain consistency and readability, please follow these code style guidelines:
+
+- Use meaningful variable and function names.
+- Follow indentation and formatting conventions used in the existing codebase.
+- Write clear and concise comments to explain complex logic or algorithms.
+
+## Code Review Process
+
+All contributions to Maa-Vimala will go through a code review process to ensure code quality, consistency, and adherence to project standards. Your contributions are valuable, and we appreciate your patience during the review process.
+
+## Community Guidelines
+
+Maa-Vimala is committed to fostering an inclusive and welcoming community. We encourage respectful and constructive communication among contributors. Please refer to our [Code of Conduct](README.md) for more information.
 
 
 ## I Have a Question
