@@ -185,3 +185,109 @@ function performImageSearchOnUnsplashes(search) {
   document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
   search = "";
 }
+
+
+function updateRealTimeDate() {
+  var currentDate = new Date();
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+  document.getElementById('date').innerHTML = formattedDate;
+}
+
+// Call the function initially
+updateRealTimeDate();
+
+// Update the date every second
+setInterval(updateRealTimeDate, 1000);
+
+function updateRealTimeTime() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+
+  // Add leading zero if necessary
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  var formattedTime = hours + ":" + minutes + ":" + seconds;
+  
+  document.getElementById('time').innerHTML =formattedTime;
+}
+
+// Call the function initially
+updateRealTimeTime();
+
+// Update the time every second
+setInterval(updateRealTimeTime, 1000);
+
+function fetchTemperature(latitude, longitude) {
+  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
+  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          var temperature = data.main.temp;
+          document.getElementById('whether').innerHTML = 'Current temperature is: ' + temperature + '°C';
+      })
+      .catch(error => {
+          console.error('Error fetching temperature:', error);
+      });
+}
+function fetchWind(latitude, longitude) {
+  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
+  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          var windSpeed = data.wind.speed;
+          var windDirection = data.wind.deg;
+
+          // Convert wind direction to cardinal direction
+          var cardinalDirection = getCardinalDirection(windDirection);
+
+          document.getElementById('wind').innerHTML = 'Current wind speed is: ' + windSpeed + ' m/s, Direction: ' + cardinalDirection;
+      })
+      .catch(error => {
+          console.error('Error fetching wind:', error);
+      });
+}
+
+function getCardinalDirection(degree) {
+  var sectors = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  var index = Math.round(degree / 45);
+  return sectors[index % 8];
+}
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          fetchTemperature(latitude, longitude);
+          fetchWind(latitude,longitude);
+      }, error => {
+          console.error('Error getting location:', error);
+      });
+  } else {
+      console.error('Geolocation is not supported by this browser.');
+  }
+}
+
+// Call the function to get location and fetch temperature
+getLocation();
+
+// Update the temperature every 5 minutes (300000 milliseconds)
+setInterval(getLocation, 300000);
+
+
+
+
+
