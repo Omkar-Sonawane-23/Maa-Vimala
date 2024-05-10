@@ -109,11 +109,11 @@ To maintain consistency and readability, please follow these code style guidelin
 - Follow indentation and formatting conventions used in the existing codebase.
 - Write clear and concise comments to explain complex logic or algorithms.
 
-## Code Review Process
+### Code Review Process
 
 All contributions to Maa-Vimala will go through a code review process to ensure code quality, consistency, and adherence to project standards. Your contributions are valuable, and we appreciate your patience during the review process.
 
-## Community Guidelines
+### Community Guidelines
 
 Maa-Vimala is committed to fostering an inclusive and welcoming community. We encourage respectful and constructive communication among contributors. Please refer to our [Code of Conduct](CODE_OF_CONDUCT.md) for more information.
 
