@@ -111,14 +111,19 @@
                 const newsCard = document.createElement('div');
                 newsCard.classList.add('news-card');
 
+                const dT = document.createElement('span');
+                dT.id = 'dT';
+                dT.innerHTML = `<h3><b>${element.pubDate}</b></h3>`;
+
                 const title = document.createElement('span');
                 title.id = 'title';
-                title.innerHTML = `<h3><b>${element.title}</b></h3>`;
+                title.innerHTML = `<h2><b><a href = "${element.link}">${element.title}</a></b></h2>`;
 
                 const description = document.createElement('span');
                 description.id = 'description';
                 description.textContent = element.description;
 
+                newsCard.appendChild(dT);
                 newsCard.appendChild(title);
                 newsCard.appendChild(description);
                 newsDiv.appendChild(newsCard);
