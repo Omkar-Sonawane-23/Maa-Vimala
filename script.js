@@ -5,7 +5,7 @@ Input.value = "";
 
 Body.addEventListener("keydown", function (e) {
   const searchcontainer = document.getElementsByClassName("search-bar")[0];
-  if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
+  if (e.key.length === 1 && e.key.match(/[a-z0-9]/i)) {
     searchcontainer.style.width = '50vw';
     searchcontainer.style.transition = 'width 0.2s ease-in-out';
   }
