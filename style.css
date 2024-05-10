@@ -188,3 +188,22 @@ button {
       border-bottom: 2px solid rgb(196, 196, 196);
     }
   }
+  h1{
+
+      font-family: "Merriweather", serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+    .nav-info{
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+    }
+    #im{
+      display: inline;
+    }
+  
+             
+  
+
