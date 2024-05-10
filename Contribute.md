@@ -44,39 +44,32 @@ If you're new to contributing to open-source projects, don't worry! Here's how y
     cd Maa-Vimala
     ```
 
-5. **Create a new branch**: To create a new branch for your profile, run the following command:
+5. **Make Changes**: Make your desired changes to the codebase or documentation.
 
-    ```
-    git checkout -b add-profile
-    ```
+6. **Test Your Changes**: Test your changes locally to ensure everything works as expected.
 
-6. **Make Changes**: Make your desired changes to the codebase or documentation.
-
-7. **Test Your Changes**: Test your changes locally to ensure everything works as expected.
-
-8. **Add your changed files**: Add changed files to the stage by running the following command:
+7. **Add your changed files**: Add changed files to the stage by running the following command:
 
     ```
     git add .
     ```
 
-9. **Commit Your Changes**: Commit your changes with descriptive commit messages.
+8. **Commit Your Changes**: Commit your changes with descriptive commit messages.
 
     ```
     git commit -m "message"
     ```
 
-10. **Push Changes**: Push your changes to your forked repository.
+9. **Push Changes**: Push your changes to your forked repository.
 
     ```
     git push
     ```
 
-11. **Create a Pull Request**: Open a pull request from your forked repository to the main Maa-Vimala repository. Provide a clear description of your changes in the pull request. Follow these steps:
+10. **Create a Pull Request**: Open a pull request from your forked repository to the main Maa-Vimala repository. Provide a clear description of your changes in the pull request. Follow these steps:
     - Add the issue number that you have been assigned (Format: Issue number #(your issue number))
     - Brief description of the changes.
 
-## Code Style Guidelines
 
 To maintain consistency and readability, please follow these code style guidelines:
 
