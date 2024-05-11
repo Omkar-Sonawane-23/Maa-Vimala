@@ -76,7 +76,19 @@
         setInterval(() => {
             time.innerText = ""
         }, 60000);
-        function getlocation() {
+
+        
+        function showLocationPopup() {
+        // Check if 'popupSeen' key exists in localStorage
+            if (localStorage.getItem('popupSeen') === null) {
+                getlocation();
+                localStorage.setItem('popupSeen', 'true');
+            }
+        }
+
+        // Call the function on page load
+        window.addEventListener('load', showLocationPopup);
+            function getlocation() {
             if (navigator.geolocation) {
                 console.log("done")
                 navigator.geolocation.getCurrentPosition(showPosition)
@@ -93,7 +105,6 @@
             whether.innerText = "Temp : " + wdata.current.temperature_2m + " c";
             wind.innerText = "Wind : " + wdata.current.wind_speed_10m + " KM/H";
         }
-        getlocation()
     </script>
     <script src="script.js"></script>
 </body>
