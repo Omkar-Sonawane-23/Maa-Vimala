@@ -164,6 +164,14 @@ button {
 
 }
 
+footer {
+  height: 120px;
+}
+
+.footer {
+  width: 100%;
+}
+
   @media screen and (max-width: 600px){
     body{
         background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
