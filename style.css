@@ -51,8 +51,8 @@ button {
 }
 
 .search-icon {
-    width: 65px;
-    font-size: 50px;
+    /* width: 65px; */
+    font-size: 40px;
     color: #666;
     cursor: pointer;
     border: 1px solid black;
@@ -112,10 +112,10 @@ button {
   .search-bar {
     background-color: transparent;
     color: white;
-    width: 4.5vw;
+    width: 20px;
     padding: 10px;
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     font-size: 2rem;
     outline: none;
   }
@@ -123,7 +123,8 @@ button {
   .search-icon {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 0;
+    width: 40px;
     transform: translateY(-50%);
     cursor: pointer;
     border: none;

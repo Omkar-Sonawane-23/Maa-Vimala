@@ -1,32 +1,36 @@
 let Input = document.getElementById("input_text");
 let Body = document.getElementById("body");
+let searchIcon = document.querySelector('#search-icon');
 let keynum;
 Input.value = "";
 
-Body.addEventListener("keydown", function (e) {
+searchIcon.addEventListener('click', () => {
   const searchcontainer = document.getElementsByClassName("search-bar")[0];
-  if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
-    searchcontainer.style.width = '50vw';
-    searchcontainer.style.transition = 'width 0.2s ease-in-out';
-  }
+  searchcontainer.style.width = '50vw';
+  searchcontainer.style.transition = 'width 0.2s ease-in-out';
+
   Input.focus();
-  if (window.event) {
-    keynum = e.keyCode;
+  Input.addEventListener('keydown', (event) => keyInput(event));
+  
+  Input.addEventListener('blur', () => {
+    if (Input.value === '')
+      searchcontainer.style.width = '20px';
+  })
+})
+
+function keyInput(e) {
+  keynum = e.keyCode;
+
+  // remove the result if displayed
+  if (Input.value.length === 1) {
+    document.getElementById('result').innerHTML = '';
   }
+
   if (keynum == 13) {
     handleDropDown(Input.value);
   }
-  Input.addEventListener("input", function (e) {
-    if (Input.value == "") {
-      document.getElementById("content").innerHTML = "";
-      document.getElementById('result').innerHTML = '';
-      searchcontainer.style.width = '4.5vw';
-    } else {
-      // updateList();
-    }
-  }
-  )
-})
+}
+
 
 // function dropDownHandeler(params) {
 //   Body.addEventListener("keydown", function (e) {
@@ -54,9 +58,9 @@ async function showWordSearchResult(params) {
 }
 async function showWikiResult(params) {
   document.getElementById('loader').classList.add('loader')
-    setTimeout(function () {
-      document.getElementById('loader').classList.remove('loader')
-    }, 1000);
+  setTimeout(function () {
+    document.getElementById('loader').classList.remove('loader')
+  }, 1000);
   let result = document.getElementById("result");
   result.innerHTML = "";
   let list = params.query.search;
@@ -101,7 +105,7 @@ function handleDropDown(search) {
     }, 1000);
   }
   else {
-    performGoogleSearch(search , true);
+    performGoogleSearch(search, true);
   }
 }
 function hasOnlyOneWord(inputString) {
@@ -141,17 +145,16 @@ function performToDoUpdate(cmd) {
 }
 function performGoogleSearch(search, isit) {
   let res = search.split("google");
-  if(isit){
-    document.location = `https://www.google.com/search?q=${encodeURIComponent(search)}`
-  }else{
+  if (isit) {
+    document.location = `https://www.google.com/search?q=${encodeURIComponent(search)}`  } else {
     document.location = `https://www.google.com/search?q=${encodeURIComponent(res[1].trim())}`
   }
-  search = "";
+  Input.value = '';
 }
 function performYouTubeSearch(search) {
   let res = search.split("youtube");
   document.location = `https://www.youtube.com/results?search_query=${encodeURIComponent(res[1].trim())}`
-  search = "";
+  Input.value = '';
 }
 function performDuckDuckGoSearch(search) {
   document.location = `https://duckduckgo.com/?q=${encodeURIComponent(search)}`
