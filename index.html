@@ -10,6 +10,38 @@
 </head>
 
 <div>
+    <!-- Settings button with icon -->
+    <button id="settings-btn"><i class="fas fa-cog"></i></button>
+
+    <!-- Change Background button -->
+    <div id="settings-popup" class="popup">
+        <div id="change-bg-section" class="background-controls">
+            <button id="change-bg-btn">Change Background</button>
+        </div>
+        <div id="background-options" class="background-options">
+            <img src="images/default-image.jpg" alt="Default Background" class="bg-option">
+            <img src="images/image1.jpg" alt="Background Image 1" class="bg-option">
+            <img src="images/image2.jpg" alt="Background Image 2" class="bg-option">
+            <img src="images/image3.jpg" alt="Background Image 3" class="bg-option">
+            <img src="images/image4.jpg" alt="Background Image 4" class="bg-option">
+            <img src="images/image5.jpg" alt="Background Image 5" class="bg-option">
+            <img src="images/image6.jpg" alt="Background Image 6" class="bg-option">
+            <img src="images/image7.jpg" alt="Background Image 7" class="bg-option">
+            <img src="images/image8.jpg" alt="Background Image 8" class="bg-option">
+            <img src="images/image9.jpg" alt="Background Image 9" class="bg-option">
+            <img src="images/image10.jpg" alt="Background Image 10" class="bg-option">
+        </div>
+        <div class="container">
+            <button type="submit" class="btn" onclick="openPopup()">Custom Background</button>
+            <div class="url_popup" id="url_popup">
+                <label for="customBackgroundUrl"></label>
+                <input type="text" id="customBackgroundUrl" class="search-bar" placeholder="Enter the URL:">
+                <button type="button" onclick="closePopup()" id="applyCustomBackground">Apply</button>
+            </div>
+        </div>
+    </div>
+
+
     <h1>Maa-Vimala</h1>
     <div class="nav-info">
         <p id="time">22 : 33 AM</p>
@@ -23,6 +55,7 @@
     </div>
 </div>
 
+
 <body id="body">
     <div>
         <div>
@@ -31,6 +64,7 @@
             </div>
             <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
+                <label for="input_text"></label>
                 <input type="text" id="input_text" class="search-bar" placeholder="">
                 <i class="fas fa-search search-icon"></i>
             </div>

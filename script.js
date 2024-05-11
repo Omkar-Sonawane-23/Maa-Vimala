@@ -1,3 +1,43 @@
+
+// for popup close and open
+let url_popup = document.getElementById("url_popup")
+
+function openPopup(){
+  url_popup.classList.add('open-popup')
+}
+
+function closePopup(){
+  url_popup.classList.remove('open-popup')
+}
+
+// to make setting only on clicking it
+let settingsBtn = document.getElementById("settings-btn");
+let settingsPopup = document.getElementById("settings-popup");
+
+settingsBtn.addEventListener("click", function(event) {
+   event.stopPropagation();
+   settingsPopup.classList.toggle("show");
+});
+
+// Selecting the background options and body element
+let backgroundOptions = document.querySelectorAll(".bg-option");
+let body = document.getElementById("body");
+
+backgroundOptions.forEach(option => {
+    option.addEventListener("click", function() {
+        let backgroundImage = option.getAttribute("src");
+        body.style.backgroundImage = `url('${backgroundImage}')`;
+    });
+});
+
+// Close the settings popup and background options when clicking outside
+document.addEventListener("click", function(event) {
+  if (!event.target.closest("#settings-popup") && !event.target.closest("#custom-setting-popup")) {
+    backgroundOptions.classList.remove("show");
+    settingsPopup.classList.remove("show");
+  }
+});
+
 let Input = document.getElementById("input_text");
 let Body = document.getElementById("body");
 let keynum;
