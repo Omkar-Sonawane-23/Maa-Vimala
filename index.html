@@ -34,6 +34,12 @@
                 <input type="text" id="input_text" class="search-bar" placeholder="">
                 <i class="fas fa-search search-icon"></i>
             </div>
+            <!-- search engine options-->
+            <div class="search-engine">
+                <a href="https://www.google.com/search"><img style="width: 25px;" src="assets/googleimg.png" alt=""></a>
+                <a href="https://www.bing.com/search"><img style="width: 25px;" src="assets/bingimg.png" alt=""></a>
+                <a href="https://www.yahoo.com/search"><img style="width: 25px;" src="assets/yahooimg.png" alt=""></a>
+            </div>
         </div>
         <div>
             <ul id="content" class="max-h-[300px] overflow-y-scroll">
@@ -64,10 +70,10 @@
         const year = currentDate.getFullYear();
         const hour = currentDate.getHours();
         const minute = currentDate.getMinutes();
-        var months = [ "Jan", "Feb", "March", "April", "May", "June", 
-           "July", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        var months = ["Jan", "Feb", "March", "April", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let timeext;
-        hour < 12? timeext = "AM" : timeext = "PM";
+        hour < 12 ? timeext = "AM" : timeext = "PM";
         setInterval(() => {
             time.innerText = hour + " : " + minute + " " + timeext;
         }, 60000);
