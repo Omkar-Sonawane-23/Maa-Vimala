@@ -164,6 +164,36 @@ button {
 
 }
 
+<<<<<<< Updated upstream
+=======
+footer {
+  height: 120px;
+}
+
+.footer {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(276, 2%, 43%, 0.493);
+  border-radius: 100vw;
+  margin-block: .5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(267, 11%, 68%);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(270, 2%, 50%);
+}
+
+>>>>>>> Stashed changes
   @media screen and (max-width: 600px){
     body{
         background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
