@@ -19,12 +19,20 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
 function changeBackground() {
   var body = document.getElementById("body");
   var newBackground = prompt("Enter URL of the new background image:");
   if (newBackground) {
+    localStorage.setItem("backgroundImage", newBackground);
     body.style.backgroundImage = `url('${newBackground}')`;
   }
+}
+
+function resetBackground() {
+  var body = document.getElementById("body");
+  localStorage.removeItem("backgroundImage");
+  body.style.backgroundImage = `url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`; // Replace 'default-background.jpg' with your default background image URL
 }
 
 var changeBgBtn = document.getElementById("change-bg-btn");
@@ -33,6 +41,16 @@ changeBgBtn.onclick = function() {
   changeBackground();
 }
 
+var resetBgBtn = document.getElementById("reset-bg-btn");
+
+resetBgBtn.onclick = function() {
+  resetBackground();
+}
+
+var storedBackground = localStorage.getItem("backgroundImage");
+if (storedBackground) {
+  document.getElementById("body").style.backgroundImage = `url('${storedBackground}')`;
+}
 
 Body.addEventListener("keydown", function (e) {
   const searchcontainer = document.getElementsByClassName("search-bar")[0];

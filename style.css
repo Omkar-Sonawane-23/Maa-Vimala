@@ -225,6 +225,13 @@ button {
   border: 1px solid #888;
   width: 80%;
 }
+.bg-change-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  margin: 10px;
+
+}
 
 /* Close Button */
 .close {
