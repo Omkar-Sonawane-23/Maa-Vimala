@@ -14,6 +14,157 @@ body div{
     margin: 40px auto;
 }
 
+/* Add this CSS to style.css */
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* background-color: #333; */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+.navbar {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background for the navbar */
+}
+
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #000;
+  color: rgb(15, 14, 14);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 600px) {
+  .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+  }
+}
+
+.logo h1{
+  margin: 0;
+  color: #ddd;
+  font-size:40px;
+  padding-left:10px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri,
+   'Trebuchet MS', sans-serif
+}
+
+.nav-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links ul li {
+  margin-right: 20px;
+}
+
+.nav-links ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  color: #fff;
+}
+
+.temperature p {
+  margin: 0;
+  color: #ddd;
+  font-size: 16px;
+}
+
+.temperature #temperature {
+  font-weight: bold;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+  .temperature {
+      display: none;
+  }
+
+  .nav-links ul {
+      display: none;
+  }
+
+  .navbar {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+  }
+
+  .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+  }
+
+  .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #ddd;
+      margin-bottom: 5px;
+      border-radius: 3px;
+  }
+
+  .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px;
+  }
+
+  .nav-links ul {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .nav-links ul li {
+      margin: 10px 0;
+  }
+
+  .nav-links ul li:last-child {
+      margin-bottom: 0;
+  }
+
+  .nav-links ul li a {
+      font-size: 16px;
+  }
+
+  .active {
+      display: flex;
+  }
+}
+
+
 input {
     width: 60vw;
     height: 60px;
@@ -135,6 +286,7 @@ button {
   right: 35px;
   padding: 0;
   top: 5px;
+  padding-right:20px;
 }
 #time{
   font-size: 1.8rem;
