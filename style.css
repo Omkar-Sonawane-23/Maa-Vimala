@@ -20,11 +20,9 @@ input {
     height: 60px;
     padding: 9px;
     text-align: center;
-    /* padding: 8px; */
     border: none;
     border-radius: 3px;
     font-size: 16px;
-    /* margin-bottom: 10px; */
     background-color: #ddd;
     color: #333;
     font-size: 30px;
@@ -35,8 +33,6 @@ input {
 button {
     width: 85px;
     height: 77px;
-    /* display: inline;
-    justify-items: center; */
     background-color: #ddd;
     margin: 0;
 }
@@ -47,8 +43,6 @@ button {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    /* border: 1px solid black; */
-
 }
 
 .search-icon {
@@ -67,7 +61,6 @@ button {
     margin: 0 auto;
     width: 100%;
     list-style: none;
-    /* border: 1px solid black; */
 }
 .wiki-result{
     list-style: none;
@@ -198,6 +191,9 @@ button {
   color: white;
   border-radius: 10px;
 }
+
+
+/* Code for the responsiveness of website */
 
   @media screen and (max-width: 600px){
     body{
