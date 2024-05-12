@@ -1,11 +1,12 @@
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    color: #ddd;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
+  background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  color: #ddd;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  background-attachment: fixed;
 }
 body div{
     display: flex;
@@ -145,15 +146,50 @@ button {
   display: flex;
   margin-top: -1px;
 }
-#link{
-  float: right;
-  font-size: 1.5rem;
-  position: absolute;
-  bottom: 0;
+.sec{
+  display: flex;
+  width: 100%;
 }
-#link a{
-  color: #1b1c6d;
 
+.header{
+  display: flex;
+  flex-direction: row;
+  float: left;
+  width: 100%;
+}
+
+.header h1{
+  padding-top: 15px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+#link{
+  margin-left: 50px;
+  font-size: 1.5rem;
+
+}
+
+#link a{
+  color: #1d21ff;
+}
+
+#news{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 95%;
+  list-style: none;
+}
+.news-card{
+  padding: 30px;
+  margin: 10px;
+  width:100%;
+  background-color: #00000076;
+  color: white;
+  border-radius: 10px;
 }
 
 
