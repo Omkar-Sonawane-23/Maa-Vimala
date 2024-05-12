@@ -1,5 +1,18 @@
+.header h1 {
+    position: fixed;
+    top: 110px; /* Adjust as needed */
+    left: 35px; /* Adjust as needed */
+    margin: 0; /* Remove default margin */
+    font-size: 2rem; /* Adjust font size */
+    color: #fff; /* Set color */
+    z-index: 999; /* Ensure it's above other content */
+}
+
 /*Setting style*/
 #settings-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: transparent;
     color: #fff;
     border: none;
@@ -19,13 +32,14 @@
 /*Setting popup*/
 .popup {
     display: none;
-    position: absolute;
+    position: fixed;
+    bottom: calc(100% + 10px);
     top: 100%;
     right: 0;
     background-color: transparent;
     border: none;
     padding: 10px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .show {
@@ -248,9 +262,12 @@ button {
   }
 
   .search-bar {
+    position: fixed;
     background-color: transparent;
     color: white;
     width: 4.5vw;
+    top: 59%;
+    right: 50%;
     padding: 10px;
     border: none;
     border-radius: 25px;
@@ -259,9 +276,9 @@ button {
   }
 
   .search-icon {
-    position: absolute;
-    top: 50%;
-    right: 15px;
+    position: fixed;
+    top: 60%;
+    right: 48%;
     transform: translateY(-50%);
     cursor: pointer;
     border: none;
