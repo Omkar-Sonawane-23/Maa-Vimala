@@ -6,6 +6,7 @@ body {
   background-color: #333;
   padding: 10px;
   border-radius: 5px;
+  background-attachment: fixed;
 }
 
 body div {
@@ -30,7 +31,6 @@ input {
   font-size: 30px;
   outline: none;
   caret-color: palevioletred;
-
 }
 
 button {
@@ -172,14 +172,30 @@ button {
 #link {
   float: right;
   font-size: 1.5rem;
-  position: absolute;
-  bottom: 0;
+
 }
+
 
 #link a {
   /* text-decoration: none; */
   color: #1b1c6d;
 
+#news{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 95%;
+  list-style: none;
+}
+.news-card{
+  padding: 30px;
+  margin: 10px;
+  width:100%;
+  background-color: #00000076;
+  color: white;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 600px) {
