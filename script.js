@@ -185,3 +185,15 @@ function performImageSearchOnUnsplashes(search) {
   document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
   search = "";
 }
+
+const searchIcon = document.querySelector('.search-icon');
+
+searchIcon.addEventListener('click', function() {
+    handleSearch();
+});
+
+function handleSearch() {
+    const inputText = document.getElementById('input_text').value;
+
+    handleDropDown(inputText);
+}
