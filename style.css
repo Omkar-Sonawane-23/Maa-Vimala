@@ -1,11 +1,12 @@
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    color: #ddd;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
+  background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  color: #ddd;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  background-attachment: fixed;
 }
 body div{
     display: flex;
@@ -19,11 +20,9 @@ input {
     height: 60px;
     padding: 9px;
     text-align: center;
-    /* padding: 8px; */
     border: none;
     border-radius: 3px;
     font-size: 16px;
-    /* margin-bottom: 10px; */
     background-color: #ddd;
     color: #333;
     font-size: 30px;
@@ -34,8 +33,6 @@ input {
 button {
     width: 85px;
     height: 77px;
-    /* display: inline;
-    justify-items: center; */
     background-color: #ddd;
     margin: 0;
 }
@@ -46,8 +43,6 @@ button {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    /* border: 1px solid black; */
-
 }
 
 .search-icon {
@@ -66,7 +61,6 @@ button {
     margin: 0 auto;
     width: 100%;
     list-style: none;
-    /* border: 1px solid black; */
 }
 .wiki-result{
     list-style: none;
@@ -152,17 +146,56 @@ button {
   display: flex;
   margin-top: -1px;
 }
-#link{
-  float: right;
-  font-size: 1.5rem;
-  position: absolute;
-  bottom: 0;
+.sec{
+  display: flex;
+  width: 100%;
 }
+
+.header{
+  display: flex;
+  flex-direction: row;
+  float: left;
+  width: 100%;
+}
+
+.header h1{
+  padding-top: 15px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+#link{
+  margin-left: 50px;
+  font-size: 1.5rem;
+
+}
+
 #link a{
   /* text-decoration: none; */
   color: #ddd;
-
 }
+
+
+#news{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 95%;
+  list-style: none;
+}
+.news-card{
+  padding: 30px;
+  margin: 10px;
+  width:100%;
+  background-color: #00000076;
+  color: white;
+  border-radius: 10px;
+}
+
+
+/* Code for the responsiveness of website */
 
   @media screen and (max-width: 600px){
     body{

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- added favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="style.css">
     <title>Maa-Vimala</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,8 +18,8 @@
         <div class="nav-info-ele">
             <p id="date">24 Aug 2022</p>
             <div id="nav-extra">
-                <span id="whether">Temp : c</span>
-                <span id="wind">Wind : 17.65</span>
+                <span id="whether"></span>
+                <span id="wind"></span>
             </div>
         </div>
     </div>
@@ -29,31 +31,32 @@
             <div>
                 <h1>Start Typing To Search...</h1>
             </div>
-            <!-- <input type="text" name="" id="input_text"> -->
+
+            <!-- Search container -->
             <div class="search-container">
                 <input type="text" id="input_text" class="search-bar" placeholder="">
                 <i class="fas fa-search search-icon"></i>
             </div>
+
         </div>
+
         <div>
             <ul id="content" class="max-h-[300px] overflow-y-scroll">
-                <!-- <li>Search On<div>
-                        <i class="fa fa-google"></i>
-                        <i class="fa fa-youtube"></i>
-                </div></li>
-                <li>Wikipedia</li>
-                <li>Maths</li>
-                <li>Word Search</li> -->
             </ul>
         </div>
         <div id="loader"></div>
         <div class="result" id="result">
         </div>
+
+        <!-- Readme file link -->
         <div id="link">
             <a href="https://github.com/Web403/Maa-Vimala">Github Repo</a>
         </div>
     </div>
+
     <script>
+
+        // Declaring the variables and the interval functions
         let time = document.getElementById('time');
         let date = document.getElementById('date');
         let whether = document.getElementById('whether');
@@ -64,10 +67,11 @@
         const year = currentDate.getFullYear();
         const hour = currentDate.getHours();
         const minute = currentDate.getMinutes();
-        var months = [ "Jan", "Feb", "March", "April", "May", "June", 
-           "July", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        var months = ["Jan", "Feb", "March", "April", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let timeext;
-        hour < 12? timeext = "AM" : timeext = "PM";
+        hour < 12 ? timeext = "AM" : timeext = "PM";
+
         setInterval(() => {
             time.innerText = hour + " : " + minute + " " + timeext;
         }, 60000);
@@ -76,6 +80,8 @@
         setInterval(() => {
             time.innerText = ""
         }, 60000);
+
+        // Function to get the user's location
         function getlocation() {
             if (navigator.geolocation) {
                 console.log("done")
@@ -86,6 +92,7 @@
             }
         }
 
+        // Function to show position, weather data based on the current location of the user
         async function showPosition(position) {
             const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`);
             const wdata = await response.json();
@@ -95,6 +102,7 @@
         }
         getlocation()
     </script>
+
     <script src="script.js"></script>
 </body>
 
