@@ -1,5 +1,5 @@
 body {
-    background-image: url('http://source.unsplash.com/1600x900/?nature,water,snow,mountains');
+    background-image: url('http://source.unsplash.com/1600x900/?nature,water,snow,mountai');
     color: #ddd;
     background-repeat: no-repeat;
     background-size: cover;
@@ -160,7 +160,7 @@ button {
 }
 #link a{
   /* text-decoration: none; */
-  color: #1b1c6d;
+  color: #e8e8e8;
 
 }
 
