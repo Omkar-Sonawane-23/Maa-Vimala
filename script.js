@@ -6,36 +6,143 @@ let keynum;
 // Clearing the input value on load
 Input.value = "";
 
-// Adding event listener for keyboard input
-Body.addEventListener("keydown", function (e) {
-    const searchcontainer = document.getElementsByClassName("search-bar")[0];
+function updateRealTimeDate() {
+  var currentDate = new Date();
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  var formattedDate = currentDate.toLocaleDateString('en-US', options);
 
-    // Expanding search bar on typing alphanumeric characters
-    if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
-        searchcontainer.style.width = '50vw';
-        searchcontainer.style.transition = 'width 0.2s ease-in-out';
-    }
-    Input.focus(); // Focusing on input field
+  document.getElementById("date").innerHTML = formattedDate;
+}
 
-    if (window.event) {
-        keynum = e.keyCode;
-    }
+updateRealTimeDate();
 
-    // Handling Enter key press
-    if (keynum == 13) {
-        handleDropDown(Input.value);
-    }
+setInterval(updateRealTimeDate, 1000);
 
-    // Clearing results and resetting search bar width if input is empty
-    Input.addEventListener("input", function (e) {
-        if (Input.value == "") {
-            document.getElementById("content").innerHTML = "";
-            document.getElementById('result').innerHTML = '';
-            searchcontainer.style.width = '4.5vw';
-        }
+function updateRealTimeTime() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+
+  // Add leading zero if necessary
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  var formattedTime = hours + ":" + minutes + ":" + seconds;
+  
+  document.getElementById("time").innerHTML =formattedTime;
+}
+
+updateRealTimeTime();
+
+
+setInterval(updateRealTimeTime, 1000);
+
+function fetchTemperature(latitude, longitude) {
+  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
+  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          var temperature = data.main.temp;
+          document.getElementById('whether').innerHTML = 'Current temperature is: ' + temperature + '°C';
+      })
+      .catch(error => {
+          console.error('Error fetching temperature:', error);
+      });
+}
+function fetchWind(latitude, longitude) {
+  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
+  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          var windSpeed = data.wind.speed;
+          var windDirection = data.wind.deg;
+
+          // Convert wind direction to cardinal direction
+          var cardinalDirection = getCardinalDirection(windDirection);
+
+          document.getElementById('wind').innerHTML = 'Current wind speed is: ' + windSpeed + ' m/s, Direction: ' + cardinalDirection;
+      })
+      .catch(error => {
+          console.error('Error fetching wind:', error);
+      });
+}
+
+function getCardinalDirection(degree) {
+  var sectors = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  var index = Math.round(degree / 45);
+  return sectors[index % 8];
+}
+
+
+function getLocation() {
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          fetchTemperature(latitude, longitude);
+          fetchWind(latitude,longitude);
+      }, error => {
+          console.error('Error getting location:', error);
+      });
+  } else {
+      console.error('Geolocation is not supported by this browser.');
+  }
+}
+
+// Call the function to get location and fetch temperature
+getLocation();
+
+// Update the temperature every 5 minutes (300000 milliseconds)
+setInterval(getLocation, 300000);
+
+document.getElementById("search-container").addEventListener("submit", function(event) {
+   event.preventDefault();
+    var searchTerm = document.getElementById("input_text").value.trim();
+    if (searchTerm !== "") {
+        // Redirect to Google search with the searchTerm
+        window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+    } else {
+        alert("Please enter something");
     }
-    )
-})
+});
+
+// // Adding event listener for keyboard input
+// Body.addEventListener("keydown", function (e) {
+//     const searchcontainer = document.getElementsByClassName("search-bar")[0];
+
+//     // // Expanding search bar on typing alphanumeric characters
+//     // if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
+//     //     searchcontainer.style.width = '50vw';
+//     //     searchcontainer.style.transition = 'width 0.2s ease-in-out';
+//     // }
+//     // Input.focus(); // Focusing on input field
+
+//     if (window.event) {
+//         keynum = e.keyCode;
+//     }
+
+//     // Handling Enter key press
+//     if (keynum == 13) {
+//         handleDropDown(Input.value);
+//     }
+
+//     // Clearing results and resetting search bar width if input is empty
+//     Input.addEventListener("input", function (e) {
+//         if (Input.value == "") {
+//             document.getElementById("content").innerHTML = "";
+//             document.getElementById('result').innerHTML = '';
+//             searchcontainer.style.width = '4.5vw';
+//         }
+//     }
+//     )
+// })
 
 // Displaying calculation result
 async function showCalcResult(params) {
@@ -67,7 +174,7 @@ async function showWikiResult(params) {
 
     let result = document.getElementById("result");
     result.innerHTML = "";
-    let list = params.query.search;
+    let list = params.searchTerm.search;
     result.innerHTML = "<h1>Wikipedia Search Results</h1>";
 
     list.map((item, i) => {
@@ -201,7 +308,7 @@ function performWolframAlphaSearch(search) {
 
 // Function to perform Wikipedia search
 function performWikipediaSearch(search) {
-    fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=5&srsearch=${encodeURIComponent(search)}`).then(response => {
+    fetch(`https://en.wikipedia.org/w/api.php?action=searchTerm&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=5&srsearch=${encodeURIComponent(search)}`).then(response => {
         response.json().then(data => {
             console.log(data);
             showWikiResult(data);
@@ -227,106 +334,6 @@ function performImageSearchOnUnsplashes(search) {
     search = "";
 }
 
-
-function updateRealTimeDate() {
-  var currentDate = new Date();
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  var formattedDate = currentDate.toLocaleDateString('en-US', options);
-
-  document.getElementById('date').innerHTML = formattedDate;
-}
-
-// Call the function initially
-updateRealTimeDate();
-
-// Update the date every second
-setInterval(updateRealTimeDate, 1000);
-
-function updateRealTimeTime() {
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  var seconds = currentTime.getSeconds();
-
-  // Add leading zero if necessary
-  hours = (hours < 10 ? "0" : "") + hours;
-  minutes = (minutes < 10 ? "0" : "") + minutes;
-  seconds = (seconds < 10 ? "0" : "") + seconds;
-
-  var formattedTime = hours + ":" + minutes + ":" + seconds;
-  
-  document.getElementById('time').innerHTML =formattedTime;
-}
-
-// Call the function initially
-updateRealTimeTime();
-
-// Update the time every second
-setInterval(updateRealTimeTime, 1000);
-
-function fetchTemperature(latitude, longitude) {
-  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
-  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
-  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          var temperature = data.main.temp;
-          document.getElementById('whether').innerHTML = 'Current temperature is: ' + temperature + '°C';
-      })
-      .catch(error => {
-          console.error('Error fetching temperature:', error);
-      });
-}
-function fetchWind(latitude, longitude) {
-  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
-  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
-  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          var windSpeed = data.wind.speed;
-          var windDirection = data.wind.deg;
-
-          // Convert wind direction to cardinal direction
-          var cardinalDirection = getCardinalDirection(windDirection);
-
-          document.getElementById('wind').innerHTML = 'Current wind speed is: ' + windSpeed + ' m/s, Direction: ' + cardinalDirection;
-      })
-      .catch(error => {
-          console.error('Error fetching wind:', error);
-      });
-}
-
-function getCardinalDirection(degree) {
-  var sectors = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-  var index = Math.round(degree / 45);
-  return sectors[index % 8];
-}
-
-
-function getLocation() {
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-          var latitude = position.coords.latitude;
-          var longitude = position.coords.longitude;
-          fetchTemperature(latitude, longitude);
-          fetchWind(latitude,longitude);
-      }, error => {
-          console.error('Error getting location:', error);
-      });
-  } else {
-      console.error('Geolocation is not supported by this browser.');
-  }
-}
-
-// Call the function to get location and fetch temperature
-getLocation();
-
-// Update the temperature every 5 minutes (300000 milliseconds)
-setInterval(getLocation, 300000);
 
 
 
