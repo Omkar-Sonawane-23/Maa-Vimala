@@ -5,6 +5,11 @@ let keynum;
 Input.value = "";
 
 searchIcon.addEventListener('click', () => {
+  if(Input.value){
+    handleDropDown(Input.value);
+    return;
+  }
+
   const searchcontainer = document.getElementsByClassName("search-bar")[0];
   searchcontainer.style.width = '50vw';
   searchcontainer.style.transition = 'width 0.2s ease-in-out';
@@ -14,7 +19,7 @@ searchIcon.addEventListener('click', () => {
   
   Input.addEventListener('blur', () => {
     if (Input.value === '')
-      searchcontainer.style.width = '20px';
+      searchcontainer.style.width = '50px';
   })
 })
 

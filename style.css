@@ -54,7 +54,6 @@ button {
     /* width: 65px; */
     font-size: 40px;
     color: #666;
-    cursor: pointer;
     border: 1px solid black;
     margin-top: 5px;
 }
@@ -105,14 +104,15 @@ button {
 
   .search-container {
     position: relative;
-    border-bottom: 2px solid rgb(196, 196, 196);
-    color: #3498db;
+    /* border-bottom: 2px solid rgb(196, 196, 196); */
+    /* color: #3498db; */
   }
-
+  
   .search-bar {
+    box-shadow: 1px 1px 10px 0 whitesmoke;
     background-color: transparent;
     color: white;
-    width: 20px;
+    width: 50px;
     padding: 10px;
     border: none;
     border-radius: 10px;
@@ -122,13 +122,32 @@ button {
 
   .search-icon {
     position: absolute;
-    top: 50%;
+    font-size: 30px;
+    height: 100%;
     right: 0;
-    width: 40px;
-    transform: translateY(-50%);
-    cursor: pointer;
+    width: 70px;
     border: none;
     color: rgb(255, 255, 255);
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    & > i[id='search-icon']{
+      font-size: 30px;
+      padding: 10px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer; 
+      transition: all ease-in 0.2s;
+
+      &:hover{
+        background: whitesmoke;
+        color: black;
+        box-shadow: 1px 1px 10px 1px whitesmoke;
+      }
+    }
   }
 
 .nav-info{
