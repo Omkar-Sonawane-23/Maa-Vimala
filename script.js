@@ -185,3 +185,8 @@ function performImageSearchOnUnsplashes(search) {
   document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
   search = "";
 }
+
+
+const yearSpan = document.querySelector('#copyright');
+const currentYear = new Date();
+yearSpan.innerText = currentYear.getFullYear();

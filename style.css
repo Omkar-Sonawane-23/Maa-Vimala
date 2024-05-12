@@ -164,6 +164,23 @@ button {
 
 }
 
+footer {
+  margin-bottom: -58px;
+}
+
+.footer {
+  width: 100%;
+}
+
+.footer p {
+  font-size: 1em;
+  color: #666;
+  background-color: #333;
+  padding: 10px 10px;
+  border-radius: 20px;
+}
+
+
   @media screen and (max-width: 600px){
     body{
         background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
