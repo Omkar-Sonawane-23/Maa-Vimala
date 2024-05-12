@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- added favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="style.css">
     <title>Maa-Vimala</title>
     <link
       rel="stylesheet"
@@ -11,7 +13,10 @@
     />
   </head>
 
-  <div>
+  <body id="body">
+    <div>
+      <div>
+          <div>
     <h1>Maa-Vimala</h1>
     <div class="nav-info">
 
@@ -21,23 +26,12 @@
         <div id="nav-extra">
           <span id="whether">Temp : c</span>
           <span id="wind">Wind : 17.65</span>
-
-        <p id="time">22 : 33 AM</p>
-        <div class="nav-info-ele">
-            <p id="date">24 Aug 2022</p>
-            <div id="nav-extra">
-                <span id="whether"></span>
-                <span id="wind"></span>
             </div>
 
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <body id="body">
-    <div>
-      <div>
+        </div>
+       </div>
         <div>
           <h1>Start Typing To Search...</h1>
         </div>
@@ -60,7 +54,7 @@
                 </div></li>
                 <li>Wikipedia</li>
                 <li>Maths</li>
-                <li>Word Search</li> 
+                <li>Word Search</li> -->
         </ul>
       </div>
       <div id="loader"></div>
@@ -71,6 +65,7 @@
         >
       </div>
     </div>
+
     <script>
       let time = document.getElementById("time");
       let date = document.getElementById("date");
@@ -129,21 +124,6 @@
       getlocation();
     </script>
 
-            </ul>
-        </div>
-        <div id="loader"></div>
-        <div class="result" id="result">
-        </div>
-        <div class="sec">
-            <div class="header">
-                <h1>News</h1>
-                <div id="link">
-                    <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
-                </div>
-            </div>
-            <div id="news"></div>
-        </div>
-    </div>
     <script src="script.js"></script>
   </body>
 </html>
