@@ -223,13 +223,28 @@ Input.addEventListener("keydown", function (event) {
 // Event listener for search icon click
 document.querySelector('.search-icon').addEventListener("click", handleSearchIconClick);
 
+const timeElement = document.getElementById('time');
+const dateElement = document.getElementById('date');
+const weatherElement = document.getElementById('whether');
+const windElement = document.getElementById('wind');
 
+function updateTime() {
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+    const hour = currentDate.getHours();
+    const minute = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
 
+    const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const timeext = hour < 12 ? "AM" : "PM";
 
+    timeElement.innerText = `${hour}:${minute}:${seconds} ${timeext}`;
+    dateElement.innerText = `${day} ${months[month - 1]} ${year}`;
 
+    setTimeout(updateTime, 1000); // Update every second
+}
 
-
-
-
-
-
+// Initial call to start updating
+updateTime();
