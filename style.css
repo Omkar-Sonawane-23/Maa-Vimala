@@ -1,17 +1,18 @@
-body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    color: #ddd;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
+body{
+  border-radius: 5px;
+  background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
+
+
 body div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 40px auto;
+
 }
 
 input {
@@ -24,7 +25,7 @@ input {
     border-radius: 3px;
     font-size: 16px;
     /* margin-bottom: 10px; */
-    background-color: #ddd;
+    background-color: white;
     color: #333;
     font-size: 30px;
     outline: none;
@@ -36,7 +37,7 @@ button {
     height: 77px;
     /* display: inline;
     justify-items: center; */
-    background-color: #ddd;
+    background-color: white;
     margin: 0;
 }
 
@@ -84,7 +85,7 @@ button {
     padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: #ddd;
+    background-color: white;
     color: #333;
     font-size: 20px;
 }

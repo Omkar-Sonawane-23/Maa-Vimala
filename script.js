@@ -187,6 +187,7 @@ function performImageSearchOnUnsplashes(search) {
 }
 
 
+
 // JavaScript code to dynamically update background image URL based on user's search query
 let searchQuery = ""; // Initialize the search query variable
 
@@ -221,3 +222,15 @@ Input.addEventListener("keydown", function (event) {
 
 // Event listener for search icon click
 document.querySelector('.search-icon').addEventListener("click", handleSearchIconClick);
+
+
+
+
+
+
+
+
+
+
+
+
