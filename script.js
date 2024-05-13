@@ -185,3 +185,64 @@ function performImageSearchOnUnsplashes(search) {
   document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
   search = "";
 }
+
+// JavaScript code to dynamically update background image URL based on user's search query
+let searchQuery = ""; // Initialize the search query variable
+
+// Function to set background image based on search query
+function setBackgroundImage(searchQuery) {
+    // Construct the background image URL with the search query
+    let imageUrl = `http://source.unsplash.com/1600x900/?${searchQuery}`;
+
+    // Set the background image URL dynamically
+    document.body.style.backgroundImage = `url('${imageUrl}')`;
+}
+
+// Function to handle background update when Enter key is pressed
+function handleEnterKey(event) {
+    if (event.key === "Enter") {
+        // Update the background image based on the user's search query
+        setBackgroundImage(searchQuery);
+    }
+}
+
+// Function to handle background update when search icon is clicked
+function handleSearchIconClick() {
+    // Update the background image based on the user's search query
+    setBackgroundImage(searchQuery);
+}
+
+// Event listener for Enter key press
+Input.addEventListener("keydown", function (event) {
+    searchQuery = event.target.value; // Update searchQuery on each key press
+    handleEnterKey(event);
+});
+
+// Event listener for search icon click
+document.querySelector('.search-icon').addEventListener("click", handleSearchIconClick);
+
+const timeElement = document.getElementById('time');
+const dateElement = document.getElementById('date');
+const weatherElement = document.getElementById('whether');
+const windElement = document.getElementById('wind');
+
+function updateTime() {
+    const currentDate = new Date();
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+    const hour = currentDate.getHours();
+    const minute = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+
+    const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const timeext = hour < 12 ? "AM" : "PM";
+
+    timeElement.innerText = `${hour}:${minute}:${seconds} ${timeext}`;
+    dateElement.innerText = `${day} ${months[month - 1]} ${year}`;
+
+    setTimeout(updateTime, 1000); // Update every second
+}
+
+// Initial call to start updating
+updateTime();
