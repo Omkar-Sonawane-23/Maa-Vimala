@@ -106,7 +106,7 @@ button {
 
   .search-container {
     position: relative;
-    border-bottom: 2px solid rgb(196, 196, 196);
+    border-bottom: 2px solid white;
     color: #3498db;
   }
 
@@ -128,7 +128,7 @@ button {
     transform: translateY(-50%);
     cursor: pointer;
     border: none;
-    color: rgb(255, 255, 255);
+    color: white;
   }
 
 .nav-info{
@@ -168,7 +168,7 @@ button {
   @media screen and (max-width: 600px){
     body{
         background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-        color: #ddd;
+        color: white;
         background-repeat: no-repeat;
         background-size:100vh;
         background-color: #fcfcfc;
@@ -186,6 +186,6 @@ button {
       visibility: hidden;
     }
     .search-container{
-      border-bottom: 2px solid rgb(196, 196, 196);
+      border-bottom: 2px solid white;
     }
   }
