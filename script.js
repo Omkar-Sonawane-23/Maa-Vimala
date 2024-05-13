@@ -1,31 +1,59 @@
 let Input = document.getElementById("input_text");
 let Body = document.getElementById("body");
-let keynum;
+const searchcontainer = document.getElementsByClassName("search-bar")[0];
+let searchIcon = document.querySelector('#search-icon');
+// let keynum;
 Input.value = "";
 
-Body.addEventListener("keydown", function (e) {
-  const searchcontainer = document.getElementsByClassName("search-bar")[0];
-  if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
-    searchcontainer.style.width = '50vw';
-    searchcontainer.style.transition = 'width 0.2s ease-in-out';
-  }
-  Input.focus();
-  if (window.event) {
-    keynum = e.keyCode;
-  }
-  if (keynum == 13) {
-    handleDropDown(Input.value);
-  }
-  Input.addEventListener("input", function (e) {
-    if (Input.value == "") {
-      document.getElementById("content").innerHTML = "";
-      document.getElementById('result').innerHTML = '';
-      searchcontainer.style.width = '4.5vw';
-    } else {
-      // updateList();
+Body.addEventListener("keydown", function (event) {
+
+  if (event.key.length === 1 && event.key.match(/[a-zA-Z0-9\s]/i)) {
+    if(Input.value === ''){
+      searchcontainer.style.width = '50vw';
+      searchcontainer.style.transition = 'width 0.2s ease-in-out';
     }
+
+    Input.focus();
+  }else if(Input.value && event.key==='Backspace' || event.key==='Delete' ){
+    Input.focus()
   }
-  )
+
+  
+  // search only input have some value
+  if (event.keyCode == 13 && Input.value) {
+    handleDropDown(Input.value);
+    Input.blur()
+  }
+
+})
+
+Input.addEventListener("input", function (e) {
+  if (Input.value == "") {
+    document.getElementById("content").innerHTML = "";
+    document.getElementById('result').innerHTML = '';
+    searchcontainer.style.width = '50px';
+    Input.blur()
+  } else {
+    // updateList();
+  }
+})
+
+Input.addEventListener('blur', () => {
+  if(Input.value === ''){
+    searchcontainer.style.width = '50px';
+  }
+})
+
+searchIcon.addEventListener('click', () => {
+  if(Input.value){
+    handleDropDown(Input.value);
+    return;
+  }
+
+  searchcontainer.style.width = '50vw';
+  searchcontainer.style.transition = 'width 0.2s ease-in-out';
+
+  Input.focus();
 })
 
 // function dropDownHandeler(params) {
@@ -65,7 +93,7 @@ async function showWikiResult(params) {
     let res = result.innerHTML += `<li class="wiki-result"><a onclick="loadwiki(${list[i].pageid})">` + list[i].title + "</a></li>";
   }
   )
-  console.log(res);
+  // console.log(res);
 }
 function loadwiki(params) {
   let result = document.getElementById("result");
@@ -99,6 +127,17 @@ function handleDropDown(search) {
     setTimeout(function () {
       document.getElementById('loader').classList.remove('loader')
     }, 1000);
+  } else if(search.toLowerCase().includes('bing') || search.toLowerCase().includes('search bing') || search.toLowerCase().includes('bing search')){
+    performBingSearch(search);
+  }else if(search.toLowerCase().includes('wolframalpha')){
+    performWolframAlphaSearch(search)
+  } else if(search.toLowerCase().includes('duckduckgo') || search.toLowerCase().includes('search duckduckgo') || search.toLowerCase().includes('duckduckgo search')){
+    performBingSearch(search);
+  }else if(search.toLowerCase().includes('image pexels') || search.toLowerCase().includes('pexels image') || search.toLowerCase().includes('pexels') ){
+    performImageSearchOnPexels(search);
+  }
+  else if(search.toLowerCase().includes('unsplash') || search.toLowerCase().includes('unsplash image') || search.toLowerCase().includes('image unsplash') ){
+    performImageSearchOnUnsplashes(search);
   }
   else {
     performGoogleSearch(search , true);
@@ -146,24 +185,24 @@ function performGoogleSearch(search, isit) {
   }else{
     document.location = `https://www.google.com/search?q=${encodeURIComponent(res[1].trim())}`
   }
-  search = "";
+  Input.value = "";
 }
 function performYouTubeSearch(search) {
   let res = search.split("youtube");
   document.location = `https://www.youtube.com/results?search_query=${encodeURIComponent(res[1].trim())}`
-  search = "";
+  Input.value = "";
 }
 function performDuckDuckGoSearch(search) {
   document.location = `https://duckduckgo.com/?q=${encodeURIComponent(search)}`
-  search = "";
+  Input.value = "";
 }
 function performBingSearch(search) {
   document.location = `https://www.bing.com/search?q=${encodeURIComponent(search)}`
-  search = "";
+  Input.value = "";
 }
 function performWolframAlphaSearch(search) {
   document.location = `https://www.wolframalpha.com/input/?i=${encodeURIComponent(search)}`
-  search = "";
+  Input.value = "";
 }
 function performWikipediaSearch(search) {
   fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=5&srsearch=${encodeURIComponent(search)}`).then(response => {
@@ -178,10 +217,12 @@ function performWhetherCheck(search) {
   search = "";
 }
 function performImageSearchOnPexels(search) {
-  document.location = `https://www.pexels.com/?s=${encodeURIComponent(search)}`
-  search = "";
+  const searchedText = search.split('pexels')[1].trim();
+  document.location = `https://www.pexels.com/?s=${encodeURIComponent(searchedText)}`
+  Input.value = "";
 }
 function performImageSearchOnUnsplashes(search) {
-  document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
-  search = "";
+  const searchedText = search.split('unsplash')[1].trim();
+  document.location = `https://unsplash.com/s/photos/${encodeURIComponent(searchedText)}`
+  Input.value = "";
 }
