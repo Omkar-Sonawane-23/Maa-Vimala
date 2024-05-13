@@ -233,4 +233,3 @@ document.querySelector('.search-icon').addEventListener("click", handleSearchIco
 
 
 
-
