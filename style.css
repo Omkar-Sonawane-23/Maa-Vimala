@@ -6,6 +6,45 @@ body {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
+    position:relative;
+    min-height: 500px;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@media screen and (max-width:500px){
+  body{
+    min-height: 350px;
+    background-size: cover;
+  }
+}
+
+.patterns {
+  height: 30vh;
+}
+
+ svg text{
+  font-family:sans-serif;
+  letter-spacing:10px;
+  stroke: #e988ccbb;
+  font-size: 100px;
+  font-weight: 700;
+  stroke-width: 3;
+  animation: Animate 5s infinite alternate;
+}
+
+@keyframes Animate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset:  20%;
+    fill:hsla(231,17%,92%, 0.300)
+  }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: hsla(231, 17%, 92%, 0.300)
+  } 
 }
 body div{
     display: flex;
