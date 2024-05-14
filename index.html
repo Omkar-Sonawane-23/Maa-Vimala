@@ -34,8 +34,13 @@
 
             <!-- Search container -->
             <div class="search-container">
-                <input type="text" id="input_text" class="search-bar" placeholder="">
+                <input type="text" id="input_text" class="search-bar" placeholder="" autocomplete="off">
                 <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <!-- adding suggestions -->
+            <div class="suggestions">
+                <ul id="suggestionslist"></ul>
             </div>
 
         </div>
@@ -71,7 +76,7 @@
             "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let timeext;
         hour < 12 ? timeext = "AM" : timeext = "PM";
-
+      
         setInterval(() => {
             time.innerText = hour + " : " + minute + " " + timeext;
         }, 60000);
@@ -104,6 +109,7 @@
     </script>
 
     <script src="script.js"></script>
+    <script src="autocomplete.js"></script>
 </body>
 
 </html>
