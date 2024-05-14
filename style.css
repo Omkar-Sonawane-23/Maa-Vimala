@@ -231,6 +231,7 @@ button {
     height: fit-content;
     position: fixed;
     right:35px;
+    bottom:25px;
   }
   
   #settings-btn:hover {
