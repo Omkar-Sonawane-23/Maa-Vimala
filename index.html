@@ -6,19 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Maa-Vimala</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   </head>
 
-  <div class="patterns">
-    <svg width="100%" height="100%">
-      <text x="50%" y="60%" text-anchor="middle">MAA-VIMALA</text>
-    </svg>
-  </div>
   <div>
-    
+    <h1>Maa-Vimala</h1>
     <div class="nav-info">
       <p id="time">22 : 33 AM</p>
       <div class="nav-info-ele">
@@ -113,7 +105,7 @@
 
       async function showPosition(position) {
         const response = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`
+          `https://api.open-meteo.com/v1/forecast?latitude=${position.coords.latitude}&longitude=${position.coords.longitude} current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`
         );
         const wdata = await response.json();
         console.log(wdata);
