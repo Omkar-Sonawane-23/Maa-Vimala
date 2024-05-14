@@ -262,12 +262,12 @@ button {
   }
 
   .search-bar {
-    position: fixed;
+    /*position: fixed;*/
     background-color: transparent;
     color: white;
     width: 4.5vw;
-    top: 59%;
-    right: 50%;
+    /*top: 59%;*/
+    /*right: 50%;*/
     padding: 10px;
     border: none;
     border-radius: 25px;
@@ -276,9 +276,9 @@ button {
   }
 
   .search-icon {
-    position: fixed;
-    top: 60%;
-    right: 48%;
+    position: absolute;
+    top: 50%;
+    right: 15%;
     transform: translateY(-50%);
     cursor: pointer;
     border: none;
