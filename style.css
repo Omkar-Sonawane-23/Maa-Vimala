@@ -191,12 +191,15 @@ button {
 
   #settings-btn {
     border: 1px solid white;
+    font-weight: bold;
     border-radius: 10px;
     background-color: transparent;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
     height: fit-content;
+    position: fixed;
+    right:35px;
   }
   
   #settings-btn:hover {
