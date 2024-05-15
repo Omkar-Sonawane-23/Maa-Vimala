@@ -14,6 +14,15 @@ body div{
     margin: 40px auto;
 }
 
+.animated-logo{
+  background-color: transparent;
+  height: 180px;
+  width: 200px;
+  position:fixed;
+  top: 0px;
+  left: 0px;
+}
+
 input {
     width: 60vw;
     height: 60px;
