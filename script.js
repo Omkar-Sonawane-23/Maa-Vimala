@@ -270,6 +270,17 @@ function updateRealTimeDate() {
   document.getElementById('date').innerHTML = formattedDate;
 }
 
+const searchIcon = document.querySelector('.search-icon');
+
+searchIcon.addEventListener('click', function() {
+    handleSearch();
+});
+
+function handleSearch() {
+    const inputText = document.getElementById('input_text').value;
+
+    handleDropDown(inputText);
+}
 // Call the function initially
 updateRealTimeDate();
 
