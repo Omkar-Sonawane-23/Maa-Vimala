@@ -200,3 +200,8 @@ button {
       border-bottom: 2px solid rgb(196, 196, 196);
     }
   }
+
+  .fa-magnifying-glass:before, .fa-search:before {
+    content: "\f002";
+    margin-left: 90px;
+}
