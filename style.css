@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+h1 {
+  color: white;
+  font-family: 'Lemon', serif;
+  font-size: 45px;
+  text-align: center;
+  margin-top: 20px;
+  animation: bounce 2s infinite;
+}
+
 body {
     background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     color: #ddd;
@@ -188,3 +211,6 @@ button {
       border-bottom: 2px solid rgb(196, 196, 196);
     }
   }
+  /* Add this CSS to your existing style.css file */
+
+
