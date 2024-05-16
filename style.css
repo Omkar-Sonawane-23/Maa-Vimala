@@ -263,6 +263,32 @@ button {
   margin-top: -1px;
 }
 
+#link{
+  float: right;
+  background-color:  #600e46;
+  padding: 12px 22px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+#link:hover{
+  border: 1px solid #571c4d;
+  background-color: #a7228e;
+}
+#link a{
+  text-decoration: none;
+  color: whitesmoke;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 570;
+}
+#link img{
+  width: 20px;
+  padding-left: 2px;
+}
+
 #link {
   float: right;
   font-size: 1.5rem;
