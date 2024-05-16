@@ -1,3 +1,4 @@
+
 body{
   border-radius: 5px;
   background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -6,6 +7,27 @@ body{
   color: white;
 }
 
+
+body {
+    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color: #ddd;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+#logoName{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#search-txt{
+  font-size: 2rem;
+  font-weight: 300;
+}
 
 body div{
     display: flex;
@@ -215,7 +237,6 @@ button {
   padding: 0;
   top: 5px;
 }
-
 #time {
   font-size: 1.8rem;
   margin-top: 5px;
@@ -223,6 +244,12 @@ button {
 
 #date {
   font-size: 1.4rem;
+#time{
+  font-size: 1.4rem;
+  margin-top: 5px;
+}
+#date{
+  font-size: 1.2rem;
   margin-top: -70px;
 }
 
@@ -343,7 +370,15 @@ button {
       border-bottom: 2px solid white;
     }
   }
+
 .suggestions ul li:hover {
   background-color: rgba(199, 35, 35, 0.312);
   color: black;
 }
+
+
+  .fa-magnifying-glass:before, .fa-search:before {
+    content: "\f002";
+    margin-left: 90px;
+}
+
