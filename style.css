@@ -15,11 +15,11 @@ body {
   margin-top: 0px;
  }
  
- .container > div{
+.container > div{
    text-align: center;
    font-size: 15px;
  }
- img {
+img {
    max-width: 100%;
    max-height: 100%;
    
