@@ -261,7 +261,6 @@ Input.addEventListener("keydown", function (event) {
 
 // Event listener for search icon click
 document.querySelector('.search-icon').addEventListener("click", handleSearchIconClick);
-
 const timeElement = document.getElementById('time');
 const dateElement = document.getElementById('date');
 const weatherElement = document.getElementById('whether');
@@ -287,7 +286,6 @@ function updateTime() {
 
 // Initial call to start updating
 updateTime();
-=======
 
 function updateRealTimeDate() {
   var currentDate = new Date();
@@ -297,6 +295,17 @@ function updateRealTimeDate() {
   document.getElementById('date').innerHTML = formattedDate;
 }
 
+const searchIcon = document.querySelector('.search-icon');
+
+searchIcon.addEventListener('click', function() {
+    handleSearch();
+});
+
+function handleSearch() {
+    const inputText = document.getElementById('input_text').value;
+
+    handleDropDown(inputText);
+}
 // Call the function initially
 updateRealTimeDate();
 
@@ -387,4 +396,6 @@ function getLocation() {
 getLocation();
 
 // Update the temperature every 5 minutes (300000 milliseconds)
+setInterval(getLocation, 300000);
+=======
 setInterval(getLocation, 300000);

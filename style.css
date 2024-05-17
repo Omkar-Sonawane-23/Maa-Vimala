@@ -1,3 +1,58 @@
+
+body{
+  border-radius: 5px;
+  background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+
+body {
+    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    color: #ddd;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+#logoName{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#search-txt{
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+body div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px auto;
+
+}
+
+input {
+    width: 60vw;
+    height: 60px;
+    padding: 9px;
+    text-align: center;
+    /* padding: 8px; */
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    /* margin-bottom: 10px; */
+    background-color: white;
+    color: #333;
+    font-size: 30px;
+    outline: none;
+    caret-color: palevioletred;
+    
 body {
   background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   color: #ddd;
@@ -38,6 +93,8 @@ button {
   height: 77px;
   /* display: inline;
     justify-items: center; */
+    background-color: white;
+    margin: 0;
   background-color: #ddd;
   margin: 0;
 }
@@ -71,6 +128,25 @@ button {
   list-style: none;
   /* border: 1px solid black; */
 }
+#content li{
+    width: 55rem;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 20px;
+}
+
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
 
 .wiki-result {
   list-style: none;
@@ -79,6 +155,11 @@ button {
   margin: 10px;
 }
 
+  .search-container {
+    position: relative;
+    border-bottom: 2px solid white;
+    color: #3498db;
+  }
 .wiki-result a {
   color: rgb(0, 255, 0);
   text-decoration: none;
@@ -109,6 +190,14 @@ button {
     transform: rotate(0deg);
   }
 
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border: none;
+    color: white;
   100% {
     transform: rotate(360deg);
   }
@@ -148,7 +237,6 @@ button {
   padding: 0;
   top: 5px;
 }
-
 #time {
   font-size: 1.8rem;
   margin-top: 5px;
@@ -156,6 +244,12 @@ button {
 
 #date {
   font-size: 1.4rem;
+#time{
+  font-size: 1.4rem;
+  margin-top: 5px;
+}
+#date{
+  font-size: 1.2rem;
   margin-top: -70px;
 }
 
@@ -177,7 +271,7 @@ button {
 
 #link a {
   /* text-decoration: none; */
-  color: #1b1c6d;
+  color: #e8e8e8;
 
 #news{
   display: flex;
@@ -252,7 +346,39 @@ button {
   border-radius: 5px;
 }
 
+  @media screen and (max-width: 600px){
+    body{
+        background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        color: white;
+        background-repeat: no-repeat;
+        background-size:100vh;
+        background-color: #fcfcfc;
+        padding: 10px;
+    }
+    .search-bar {
+      position: absolute;
+      font-size: 1.5rem;
+      top: 10rem;
+      right: -5rem;
+      color: white;
+      border-bottom: 2px solid white;
+    }
+    .search-icon {
+      visibility: hidden;
+    }
+    .search-container{
+      border-bottom: 2px solid white;
+    }
+  }
+
 .suggestions ul li:hover {
   background-color: rgba(199, 35, 35, 0.312);
   color: black;
 }
+
+
+  .fa-magnifying-glass:before, .fa-search:before {
+    content: "\f002";
+    margin-left: 90px;
+}
+
