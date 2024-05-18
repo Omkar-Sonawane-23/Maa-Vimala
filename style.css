@@ -8,15 +8,81 @@ body {
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
 }
-
-#logoName{
-  font-size: 2rem;
-  font-weight: 600;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Optional: adjust based on your layout */
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left edge */
+  width: 100%; /* Ensure it spans the full width of the viewport */
+  
+  color: white; /* Optional text color */
+  
+  flex-direction: row-reverse;
+  height: 50px; /* Adjusted height */
+}
+
+
+.navbar-brand {
+  color: white;
+  font-size: 18px;  /* Reduced font size */
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.navbar-items {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row; 
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;  /* Reduced padding */
+  display: flex;
+  align-items: center;
+  border-radius: 15px;  /* Adjusted border radius */
+  transition: background-color 0.3s ease;
+  font-size: 14px;  /* Reduced font size */
+}
+
+.navbar-item .icon {
+  margin-right: 5px;  /* Adjusted icon margin */
+}
+
+.navbar-item.active,
+.navbar-item:hover {
+  background-color: white;
+  color: #5468ff;
+}
+
+.navbar-item.active {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#logoName {
+  font-size: 2rem;
+  font-weight: 600;
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Align to the top of the viewport */
+  left: 6%; /* Align to the center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  
+  padding: 10px 20px; /* Optional padding */
+  z-index: 1000; /* Ensure it's above other content */
+}
 #search-txt{
   font-size: 2rem;
   font-weight: 300;
+
 }
 
 body div{
