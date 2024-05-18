@@ -17,7 +17,7 @@
 
 <body id="body">
     <div>
-        <h1 id="logoName">Maa-Vimala</h1>
+        <h1 id="logoName">MAA-VIMALA</h1>
         <div class="nav-info">
             <p id="time">22 : 33 AM</p>
             <div class="nav-info-ele">
@@ -29,17 +29,24 @@
             </div>
         </div>
     </div>
-    <div>
-        <div>
-            <div>
-                <h1 id="search-txt">Start Typing To Search...</h1>
-            </div>
-            <!-- <input type="text" name="" id="input_text"> -->
-            <div class="search-container">
-                <input type="text" id="input_text" class="search-bar" placeholder="">
-                <i class="fas fa-search search-icon"></i>
-            </div>
-        </div>
+    <div onclick="hideallfunction()" id="hideall"></div>
+
+    <div class="features">
+        <h1>Features
+            <h2>Real-time Weather Updates</h2>
+            <h2>7-Day Forecast</h2>
+            <h2>Severe Weather Alerts</h2>
+            <h2>Customizable Locations</h2>
+        </h1>
+    </div>
+
+    <div id="search-section-js" class="searchsection">
+        <div role="search" class="search">
+        <input tabindex="1" id="search-bar-js" class="searchbar" type="search" aria-label="Search text" placeholder="Search..." name="search">
+        
+      </div>
+
+        
         <div>
             <ul id="content" class="max-h-[300px] overflow-y-scroll">
                 <!-- <li>Search On<div>
@@ -54,10 +61,7 @@
         <div id="loader"></div>
         <div class="result" id="result">
         </div>
-        <div id="link">
-            <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
-        </div>
-    </div>
+     
     <script>
         let time = document.getElementById('time');
         let date = document.getElementById('date');
