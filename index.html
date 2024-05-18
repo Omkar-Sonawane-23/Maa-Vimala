@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- added favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Maa-Vimala</title>
     <link
@@ -13,19 +17,31 @@
     />
   </head>
 
-  <body id="body">
-    <div>
-      <div>
-          <div>
-    <h1>Maa-Vimala</h1>
-    <div class="nav-info">
 
-      <p id="time">22 : 33 AM</p>
-      <div class="nav-info-ele">
-        <p id="date">24 Aug 2022</p>
-        <div id="nav-extra">
-          <span id="whether">Temp : c</span>
-          <span id="wind">Wind : 17.65</span>
+
+<body id="body">
+    <div>
+        <h1 id="logoName">Maa-Vimala</h1>
+        <div class="nav-info">
+            <p id="time">22 : 33 AM</p>
+            <div class="nav-info-ele">
+                <p id="date">24 Aug 2022</p>
+                <div id="nav-extra">
+                    <span id="whether">Temp : c</span>
+                    <span id="wind">Wind : 17.65</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div>
+                <h1 id="search-txt">Start Typing To Search...</h1>
+            </div>
+            <!-- <input type="text" name="" id="input_text"> -->
+            <div class="search-container">
+                <input type="text" id="input_text" class="search-bar" placeholder="">
+              <i class="fas fa-search search-icon"></i>
             </div>
 
           </div>
