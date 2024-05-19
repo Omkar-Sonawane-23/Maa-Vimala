@@ -6,7 +6,19 @@ body {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
+    font-family: "Poppins", sans-serif;
 }
+
+#logoName{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#search-txt{
+  font-size: 2rem;
+  font-weight: 300;
+}
+
 body div{
     display: flex;
     flex-direction: column;
@@ -146,11 +158,11 @@ button {
   top: 5px;
 }
 #time{
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-top: 5px;
 }
 #date{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-top: -70px;
 }
 #whether{
@@ -197,3 +209,8 @@ button {
       border-bottom: 2px solid rgb(196, 196, 196);
     }
   }
+
+  .fa-magnifying-glass:before, .fa-search:before {
+    content: "\f002";
+    margin-left: 90px;
+}
