@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,9 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-
-
 <body id="body">
+    <div class="container">
+        <div class="image">
+            <img src="MAA-VIMALAlogo.png">
+        </div>
+        <div class="text">
+            <h1>Maa-Vimala</h1>
+        </div>
+    </div>
+
     <div>
         <h1 id="logoName">MAA-VIMALA</h1>
         <div class="nav-info">
@@ -42,11 +48,8 @@
 
     <div id="search-section-js" class="searchsection">
         <div role="search" class="search">
-        <input tabindex="1" id="search-bar-js" class="searchbar" type="search" aria-label="Search text" placeholder="Search..." name="search">
-        
-      </div>
-
-        
+            <input tabindex="1" id="search-bar-js" class="searchbar" type="search" aria-label="Search text" placeholder="Search..." name="search">
+        </div>
         <div>
             <ul id="content" class="max-h-[300px] overflow-y-scroll">
                 <!-- <li>Search On<div>
@@ -59,9 +62,9 @@
             </ul>
         </div>
         <div id="loader"></div>
-        <div class="result" id="result">
-        </div>
-     
+        <div class="result" id="result"></div>
+    </div>
+
     <script>
         let time = document.getElementById('time');
         let date = document.getElementById('date');
@@ -73,10 +76,10 @@
         const year = currentDate.getFullYear();
         const hour = currentDate.getHours();
         const minute = currentDate.getMinutes();
-        var months = [ "Jan", "Feb", "March", "April", "May", "June", 
-           "July", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        var months = ["Jan", "Feb", "March", "April", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let timeext;
-        hour < 12? timeext = "AM" : timeext = "PM";
+        hour < 12 ? timeext = "AM" : timeext = "PM";
         setInterval(() => {
             time.innerText = hour + " : " + minute + " " + timeext;
         }, 60000);
