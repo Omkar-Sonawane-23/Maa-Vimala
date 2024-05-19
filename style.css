@@ -6,7 +6,18 @@ body {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
-    font-family: "Poppins", sans-serif;
+    position:relative;
+    min-height: 500px;
+    background-position: top center;
+    background-attachment:scroll;
+    background-size: cover;
+}
+
+@media screen and (max-width:500px){
+  body{
+    min-height: 350px;
+    background-size: cover;
+  }
 }
 
 /*#logoName{
