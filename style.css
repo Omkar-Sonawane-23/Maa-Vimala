@@ -20,9 +20,24 @@ body {
   }
 }
 
-#logoName{
+/*#logoName{
   font-size: 2rem;
   font-weight: 600;
+}*/
+
+.container {
+  display:grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr 8fr 3fr;
+  margin-top: 0px;
+}
+.container > div{
+  text-align: center;
+  font-size: 15px;
+}
+img{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #search-txt{
