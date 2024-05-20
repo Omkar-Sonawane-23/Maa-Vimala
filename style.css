@@ -4,14 +4,87 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #333;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
+    margin:0;
 }
+/* Navbar Styling */
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  margin: 0;
+  padding: 15px;
+}
+.navbar h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+ .navbar .nav-links li i {
+     color: #fff;
+        
+}
+
+.nav-links a:hover {
+  color: #ffcc00; /* Highlight color on hover */
+}
+
+/* Responsive Navbar for Mobile */
+@media screen and (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .nav-links li {
+      margin: 10px 0;
+  }
+}
+
+/* Other existing styles */
+
 
 #logoName{
   font-size: 2rem;
   font-weight: 600;
+  margin:0;
 }
 
 #search-txt{
@@ -141,24 +214,16 @@ button {
     border: none;
     color: rgb(255, 255, 255);
   }
+  .nav-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #ddd;
+}
 
-.nav-info{
-  position: absolute;
-  right: 35px;
-  padding: 0;
-  top: 5px;
-}
-#time{
-  font-size: 1.4rem;
-  margin-top: 5px;
-}
-#date{
-  font-size: 1.2rem;
-  margin-top: -70px;
-}
-#whether{
-  font-size: 1.2rem;
-  margin-top: -20px;
+#time, #date, #whether, #wind {
+    margin: 0;
+    font-size: 1rem;
 }
 #nav-extra{
   display: flex;
