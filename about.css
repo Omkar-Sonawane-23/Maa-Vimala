@@ -1,0 +1,43 @@
+body{
+    height:100vh;
+    width: 100vw;
+    
+}
+
+.hero-image, .hero-text{
+    width: 50%;
+}
+
+.hero-text
+{
+    padding: 5% 10% 5% 10%;
+}
+
+.hero
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    color: #000;
+}
+
+ul{
+    list-style-type: none;
+
+}
+li{
+    margin: 10px;
+}
+
+.how-to-use
+{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
