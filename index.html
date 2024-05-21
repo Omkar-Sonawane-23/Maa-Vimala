@@ -1,62 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes swipe {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Adjust this value for the swipe height */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        #logoName {
+            font-family: 'Poppins', sans-serif;
+            animation: swipe 2s infinite; /* Adjust the duration as needed */
+        }
+        .search-icon {
+            position: relative;
+        }
+        .tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px; /* Adjust padding as needed */
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap; /* Prevent line breaks */
+        }
+        .search-icon:hover .tooltip {
+            opacity: 1;
+        }
+    </style>
     <title>Maa-Vimala</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body id="body">
-        <header>
-            <nav class="navbar">
-                <h1 id="logoName">Maa-Vimala</h1>
-                <ul class="nav-links">
-                    <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
-                    <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
-                    <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
-                    <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="#contact">  Contact Us  </a></li>
-                </ul>
-            </nav>
-        </header>
-    <!-- <div>
-        <div class="nav-info">
-            <p id="time">22 : 33 AM</p>
-            <div class="nav-info-ele">
-                <p id="date">24 Aug 2022</p>
-                <div id="nav-extra">
-                    <span id="whether">Temp : c</span>
-                    <span id="wind">Wind : 17.65</span>
-                </div>
-            </div>
-        </div> -->
-    </div>
+    <header>
+        <nav class="navbar">
+            <h1 id="logoName">Maa-Vimala</h1>
+            <ul class="nav-links">
+                <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
+                <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
+                <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
+                <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
+                <li><i class="fa-solid fa-envelope"></i><a href="#contact">  Contact Us  </a></li>
+            </ul>
+        </nav>
+    </header>
     <div>
         <div>
             <div>
                 <h1 id="search-txt">Start Typing To Search...</h1>
             </div>
-            <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
                 <input type="text" id="input_text" class="search-bar" placeholder="">
-                <i class="fas fa-search search-icon"></i>
+                <i class="fas fa-search search-icon">
+                    <span class="tooltip">Hey! Click here to get the details</span>
+                </i>
             </div>
         </div>
         <div>
             <ul id="content" class="max-h-[300px] overflow-y-scroll">
-                <!-- <li>Search On<div>
-                        <i class="fa fa-google"></i>
-                        <i class="fa fa-youtube"></i>
-                </div></li>
-                <li>Wikipedia</li>
-                <li>Maths</li>
-                <li>Word Search</li> -->
+                <!-- Content dynamically generated here -->
             </ul>
         </div>
         <div id="loader"></div>
@@ -110,5 +128,4 @@
     </script>
     <script src="script.js"></script>
 </body>
-
 </html>
