@@ -164,20 +164,20 @@ button {
   top: 5px;
 }
 #time{
-  font-size: 1.4rem;
-  margin-top: 5px;
+  font-size: 1rem;
 }
 #date{
-  font-size: 1.2rem;
-  margin-top: -70px;
+  font-size: 1rem;
 }
 #whether{
-  font-size: 1.2rem;
-  margin-top: -20px;
+  font-size: 40px;
+  margin-top: -10px;
+  font-weight: bold;
+  margin-bottom: -10px;
 }
 #nav-extra{
-  display: flex;
-  margin-top: -1px;
+  display: inline;
+  margin-top: 0%;
 }
 #link{
   float: right;
