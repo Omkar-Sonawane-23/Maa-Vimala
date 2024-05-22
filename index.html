@@ -37,10 +37,10 @@
             </div>
         </div> -->
     </div>
-    <div>
-        <div>
+    <div class="main">
+        <div class="box1">
             <div>
-                <h1 id="search-txt">Start Typing To Search...</h1>
+                <h1 id="search-txt">Start Typing To Search<span id="dots">...</span></h1>
             </div>
             <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
@@ -62,9 +62,10 @@
         <div id="loader"></div>
         <div class="result" id="result">
         </div>
-        <div id="link">
-            <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
-        </div>
+        
+    </div>
+    <div id="link">
+        <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Know more</a>
     </div>
     <script>
         let time = document.getElementById('time');
@@ -109,6 +110,8 @@
         getlocation()
     </script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="animation.js"></script>
 </body>
 
 </html>
