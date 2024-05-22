@@ -11,10 +11,60 @@
     <link rel="stylesheet" href="style.css">
     <title>Maa-Vimala</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+         .preloader{
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+margin: 0;
+  padding: 0;
+  height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: black;
+transition: opacity 5s, visibility 5s;
+z-index: 1000;
+}
+
+.preloader--hidden{
+opacity: 0;
+visibility: hidden;
+}
+.preloader img{
+height: 200px;
+width: 200px;
+border-radius: 1000px;
+}
+#nav--hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+#nav{
+    transition: opacity 5s, visibility 5s;
+    z-index: 1;
+    position: fixed;
+}
+    </style>
 </head>
 <body id="body">
+    <div class="preloader">
+        <img src="Search.gif" alt="" class="center">
+    </div>
+    <script>
+        window.addEventListener("load", () => {
+    const loader = document.querySelector(".preloader");
+    
+    loader.classList.add("preloader--hidden");
+    
+    loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+    });
+    });
+    </script>
         <header>
-            <nav class="navbar">
+            <nav class="navbar" id="nav">
                 <h1 id="logoName">Maa-Vimala</h1>
                 <ul class="nav-links">
                     <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
@@ -25,6 +75,17 @@
                 </ul>
             </nav>
         </header>
+        <script>
+            window.addEventListener("load", () => {
+    const loader = document.querySelector("#nav");
+    
+    loader.classList.add("nav--hidden");
+    
+    loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+    });
+    });
+        </script>
     <!-- <div>
         <div class="nav-info">
             <p id="time">22 : 33 AM</p>
