@@ -6,7 +6,7 @@ body {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
-    font-family: "Poppins", sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /*#logoName{
@@ -266,6 +266,7 @@ nav {
 
 .nav-links li {
   margin: 0 10px;
+  border-bottom: 1px solid rgb(112, 94, 200);
 }
 
 .nav-links a {
@@ -280,7 +281,8 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #ffcc00; /* Highlight color on hover */
+  color: rgb(112, 94, 200); 
+  /* Highlight color on hover */
 }
 
 /* Responsive Navbar for Mobile */
@@ -304,9 +306,10 @@ nav {
 
 
 #logoName{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin:0;
+  color: rgb(112, 94, 200);
 }
 
 #search-txt{
@@ -359,7 +362,7 @@ button {
 
 .search-icon {
     width: 65px;
-    font-size: 50px;
+    font-size: 40px;
     color: #666;
     cursor: pointer;
     border: 1px solid black;
@@ -491,4 +494,9 @@ button {
   .fa-magnifying-glass:before, .fa-search:before {
     content: "\f002";
     margin-left: 90px;
+}
+.footerBottom{
+  background-color: rgb(112, 94, 200);
+  height: 50px;
+  text-align: center;
 }
