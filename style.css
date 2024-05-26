@@ -24,6 +24,11 @@ body {
   text-align: center;
   font-size: 15px;
 }
+
+li{
+  padding: 10px;
+}
+
 img{
   max-width: 100%;
   max-height: 100%;
@@ -102,7 +107,7 @@ button {
     margin: 10px;
 }
 .wiki-result a{
-    color: rgb(0, 255, 0);
+    color: rgb(34, 119, 34);
     text-decoration: none;
 }
 #content li{
