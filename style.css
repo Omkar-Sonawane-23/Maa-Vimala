@@ -281,6 +281,7 @@ nav {
 
 .nav-links a:hover {
   color: #ffcc00; /* Highlight color on hover */
+  border-bottom: 2px solid white;
 }
 
 /* Responsive Navbar for Mobile */
