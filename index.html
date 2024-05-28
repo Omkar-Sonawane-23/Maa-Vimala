@@ -11,20 +11,62 @@
     <link rel="stylesheet" href="style.css">
     <title>Maa-Vimala</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body id="body">
-        <header>
-            <nav class="navbar">
-                <h1 id="logoName">Maa-Vimala</h1>
-                <ul class="nav-links">
-                    <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
-                    <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
-                    <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
-                    <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="#contact">  Contact Us  </a></li>
+    <header>
+        <nav class="navbar flex items-center justify-between  bg-gray-800 text-white ">
+            <h1 id="logoName" class="text-2xl ">Maa-Vimala</h1>
+            <!-- Menu Icon for small screens -->
+            <div class="menu-icon md:hidden absolute right-4 top-[-20px] cursor-pointer " id="menuToggleIcon">
+                <i class="fa-solid fa-bars text-3xl " id="menuIcon"></i>
+                <i class="fa-solid fa-times text-3xl hidden" id="closeMenuIcon"></i>
+            </div>
+            <!-- Desktop Menu Links -->
+            <ul class="nav-links hidden md:flex space-x-4" id="desktopNavLinks">
+                <li><i class="fa-solid fa-house"></i><a href="#home" class="hover:text-gray-400"> Home </a></li>
+                <li><i class="fa-solid fa-info-circle"></i><a href="#about" class="hover:text-gray-400"> About Us </a></li>
+                <li><i class="fa-solid fa-concierge-bell"></i><a href="#services" class="hover:text-gray-400"> Services </a></li>
+                <li><i class="fa-solid fa-star"></i><a href="#reviews" class="hover:text-gray-400"> Reviews </a></li>
+                <li><i class="fa-solid fa-envelope"></i><a href="#contact" class="hover:text-gray-400"> Contact Us </a></li>
+            </ul>
+            <!-- Mobile Menu Links -->
+            <div class="mobile-menu hidden fixed h-1/2 top-[-40px] inset-0 bg-gray-900 bg-opacity-75 flex flex-col items-center justify-center" id="mobileMenu">
+                <ul class="space-y-4 text-white text-xl">
+                    <li><i class="fa-solid fa-house"></i><a href="#home" class="hover:text-gray-400"> Home </a></li>
+                    <li><i class="fa-solid fa-info-circle"></i><a href="#about" class="hover:text-gray-400"> About Us </a></li>
+                    <li><i class="fa-solid fa-concierge-bell"></i><a href="#services" class="hover:text-gray-400"> Services </a></li>
+                    <li><i class="fa-solid fa-star"></i><a href="#reviews" class="hover:text-gray-400"> Reviews </a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="#contact" class="hover:text-gray-400"> Contact Us </a></li>
                 </ul>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuToggleIcon = document.getElementById('menuToggleIcon');
+                const menuIcon = document.getElementById('menuIcon');
+                const closeMenuIcon = document.getElementById('closeMenuIcon');
+                const mobileMenu = document.getElementById('mobileMenu');
+    
+                menuToggleIcon.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                    menuIcon.classList.toggle('hidden');
+                    closeMenuIcon.classList.toggle('hidden');
+                });
+    
+                // Close the menu when clicking outside of it
+                document.addEventListener('click', function (event) {
+                    const isClickInside = menuToggleIcon.contains(event.target) || mobileMenu.contains(event.target);
+                    if (!isClickInside) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeMenuIcon.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
     <!-- <div>
         <div class="nav-info">
             <p id="time">22 : 33 AM</p>

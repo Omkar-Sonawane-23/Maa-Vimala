@@ -13,6 +13,82 @@ body {
   font-size: 2rem;
   font-weight: 600;
 }*/
+/* Existing CSS */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+/* Existing CSS */
+
+/* Hide the menu icon by default on medium and larger screens */
+.menu-icon {
+  display: none;
+}
+
+/* Show the menu icon on small screens */
+@media only screen and (max-width: 768px) {
+  .menu-icon {
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 1000; /* Ensure it's above other content */
+      color: white;
+      cursor: pointer;
+  }
+
+  /* Hide the navigation links by default on small screens */
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px; /* Adjust the top position as needed */
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      z-index: 999; /* Ensure it's above other content */
+  }
+
+  /* Show the navigation links when the .show class is added */
+  .nav-links.show {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  /* Style for each individual link */
+  .nav-links a {
+      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+  }
+}
 
 .container {
   display:grid;
