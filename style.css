@@ -274,12 +274,13 @@ nav {
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
- .navbar .nav-links li i {
-     color: #fff;
-        
+
+.navbar .nav-links li i {
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .navbar .nav-links li:hover i {
   color: #ffcc00; /* Highlight color on hover */
 }
 
