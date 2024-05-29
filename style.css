@@ -1,5 +1,6 @@
+
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url(nature.webp);
     color: #ddd;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,6 +8,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
+    height: 100%;
 }
 
 /*#logoName{
@@ -27,6 +29,26 @@ body {
 img{
   max-width: 100%;
   max-height: 100%;
+}
+
+.logo{
+  margin: 0;
+  padding: 0;
+  height: 90px;
+ width: 90px;
+
+}
+.outer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  list-style: none;
+  gap: 1px;
+  /* border: 1px solid black; */
+
 }
 
 #search-txt{
@@ -95,7 +117,21 @@ button {
     list-style: none;
     /* border: 1px solid black; */
 }
-.wiki-result{
+.result{
+  border: 2px solid white;
+  border-radius: 50px;
+  height: 40vh;
+  width: 70vw;
+  margin-top: 0;
+  margin-left: 40px;
+  position: absolute;
+  top: 440px;
+  box-shadow: inset 0 0 10px white;
+  padding: 40px;
+  
+}
+
+/* .wiki-result{
     list-style: none;
     font-size: 20px;
     padding: 10px;
@@ -104,7 +140,7 @@ button {
 .wiki-result a{
     color: rgb(0, 255, 0);
     text-decoration: none;
-}
+} */
 #content li{
     width: 55rem;
     margin: 10px;
@@ -131,23 +167,30 @@ button {
   }
 
   .search-container {
+    border: 2px solid white;
+    background-color:  #EEEEEE;
+    width: 900px;
+    border-radius: 50px;
     position: relative;
     border-bottom: 2px solid rgb(196, 196, 196);
-    color: #3498db;
+    /* color: #3498db; */
+    display: flex;
+    flex-direction: row;
   }
 
-  .search-bar {
-    background-color: transparent;
+  .searchbtn{
+    background-color: #DC5F00;
     color: white;
-    width: 4.5vw;
-    padding: 10px;
     border: none;
-    border-radius: 25px;
+    border-radius: 60px;
+    padding: 10px 20px;
+    cursor: pointer;
     font-size: 2rem;
-    outline: none;
   }
+
 
   .search-icon {
+    
     position: absolute;
     top: 50%;
     right: 15px;
@@ -193,7 +236,7 @@ button {
 
   @media screen and (max-width: 600px){
     body{
-        background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        /* background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
         color: #ddd;
         background-repeat: no-repeat;
         background-size:100vh;
@@ -220,20 +263,12 @@ button {
     content: "\f002";
     margin-left: 90px;
 }
-body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    color: #ddd;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #333;
-    padding: 15px;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-    margin:0;
-}
+
 /* Navbar Styling */
 nav {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: #373A40; */
+  box-shadow: inset 0 0 10px #707379;
+  /* box-shadow: inset 0 0 10px white; */
   width: 100%;
   padding: 1rem 0;
   position: fixed;
@@ -249,6 +284,9 @@ nav {
   align-items:center;
   margin: 0;
   padding: 15px;
+  height: 10vh;
+  width: 100vw;
+  
 }
 .navbar h1 {
   color: #fff;
@@ -256,12 +294,15 @@ nav {
   font-weight: 600;
   margin: 0;
 }
-
+/* 
 .nav-links {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
+  justify-content: space-around;
+  width: 50%;
+  align-items: center;
 }
 
 .nav-links li {
@@ -280,9 +321,52 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #ffcc00; /* Highlight color on hover */
+  color: #ffcc00; 
+} */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1px;
 }
 
+.nav-links li {
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+.nav-links a {
+  
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  
+  /* background-color: #555; */
+  color: #fff;
+
+  transform: scale(1.2);     
+   
+    background: linear-gradient(to top left, #f18e1d90 30%, #f58e07 20%);
+    /* margin-left: 30px; */
+    /* margin-right: 30px; */
+    /* transform: translateY(20px); */
+}
+
+/* Styles for the icons in the navigation links */
+.nav-links i {
+  margin-right: 8px;
+}
 /* Responsive Navbar for Mobile */
 @media screen and (max-width: 600px) {
   .navbar {
@@ -298,6 +382,18 @@ nav {
   .nav-links li {
       margin: 10px 0;
   }
+}
+
+.company{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  list-style: none;
+  /* border: 1px solid black; */
+
 }
 
 /* Other existing styles */
@@ -375,7 +471,7 @@ button {
     list-style: none;
     /* border: 1px solid black; */
 }
-.wiki-result{
+/* .wiki-result{
     list-style: none;
     font-size: 20px;
     padding: 10px;
@@ -384,7 +480,7 @@ button {
 .wiki-result a{
     color: rgb(0, 255, 0);
     text-decoration: none;
-}
+} */
 #content li{
     width: 55rem;
     margin: 10px;
@@ -418,8 +514,7 @@ button {
 
   .search-bar {
     background-color: transparent;
-    color: white;
-    width: 4.5vw;
+    width: fit-content;
     padding: 10px;
     border: none;
     border-radius: 25px;
@@ -492,3 +587,4 @@ button {
     content: "\f002";
     margin-left: 90px;
 }
+

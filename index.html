@@ -15,16 +15,21 @@
 <body id="body">
         <header>
             <nav class="navbar">
-                <h1 id="logoName">Maa-Vimala</h1>
+                <div class="company">
+                    <img src="MAA-VIMALAlogo.png" alt="" class="logo">
+                    <h1 id="logoName">Maa-Vimala</h1>
+                </div>
+                <div >
                 <ul class="nav-links">
-                    <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
-                    <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
-                    <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
-                    <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="#contact">  Contact Us  </a></li>
+                    <li><a href="#home">  Home  </a></li>
+                    <li><a href="#about">  About </a></li>
+                    <li><a href="#services">  Services  </a></li>
+                    <li><a href="#contact">  ContactUs  </a></li>
                 </ul>
+            </div>
             </nav>
         </header>
+        
     <!-- <div>
         <div class="nav-info">
             <p id="time">22 : 33 AM</p>
@@ -37,15 +42,17 @@
             </div>
         </div> -->
     </div>
-    <div>
+    <div class="outer">
         <div>
             <div>
-                <h1 id="search-txt">Start Typing To Search...</h1>
+                <h1 id="search-txt">Start Looking for Something...</h1>
             </div>
             <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
-                <input type="text" id="input_text" class="search-bar" placeholder="">
-                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="input_text" class="search-bar" placeholder="Search...">
+                <button class="searchbtn"> 
+                   <img src="search.svg" alt="" class="svgimg" >
+                </button>
             </div>
         </div>
         <div>
@@ -62,10 +69,9 @@
         <div id="loader"></div>
         <div class="result" id="result">
         </div>
-        <div id="link">
-            <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
-        </div>
+        
     </div>
+    
     <script>
         let time = document.getElementById('time');
         let date = document.getElementById('date');
