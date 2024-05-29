@@ -281,6 +281,7 @@ nav {
 
 .nav-links a:hover {
   color: #ffcc00; /* Highlight color on hover */
+  border-bottom: 2px solid white;
 }
 
 /* Responsive Navbar for Mobile */
@@ -307,6 +308,7 @@ nav {
   font-size: 2rem;
   font-weight: 600;
   margin:0;
+  color: rgb(219, 105, 74);
 }
 
 #search-txt{
