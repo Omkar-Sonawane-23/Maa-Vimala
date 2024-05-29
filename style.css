@@ -80,7 +80,7 @@ button {
 .search-icon {
     width: 65px;
     font-size: 50px;
-    color: #666;
+    color: #e26b6b;
     cursor: pointer;
     border: 1px solid black;
     margin-top: 5px;
@@ -281,6 +281,7 @@ nav {
 
 .nav-links a:hover {
   color: #ffcc00; /* Highlight color on hover */
+  border-bottom: 2px solid white;
 }
 
 /* Responsive Navbar for Mobile */
@@ -307,6 +308,7 @@ nav {
   font-size: 2rem;
   font-weight: 600;
   margin:0;
+  color: #e26b6b;
 }
 
 #search-txt{
