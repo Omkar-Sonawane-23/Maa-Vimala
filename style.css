@@ -184,10 +184,12 @@ button {
   font-size: 1.5rem;
   position: absolute;
   bottom: 0;
+  color: white;
 }
 #link a{
   /* text-decoration: none; */
   color: #1b1c6d;
+  background-color: white;
 
 }
 
