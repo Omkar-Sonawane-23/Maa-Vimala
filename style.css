@@ -3,7 +3,7 @@ body {
     color: #ddd;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #333;
+    background-color: #0f0f0f;
     padding: 10px;
     border-radius: 5px;
     font-family: "Poppins", sans-serif;
@@ -25,8 +25,10 @@ body {
   font-size: 15px;
 }
 img{
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 15%;
+  max-height: 30%;
+  margin-left: -25%;
+  margin-top: -5%;
 }
 
 #search-txt{
@@ -247,13 +249,14 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items:center;
-  margin: 0;
-  padding: 15px;
+  margin-top:0%;
+  padding: 10px;
+  height: 30px;
 }
 .navbar h1 {
   color: #fff;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 0rem;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -262,10 +265,13 @@ nav {
   display: flex;
   margin: 0;
   padding: 0;
+  margin-top: -70px;
+  margin-right: -150px;
 }
 
 .nav-links li {
   margin: 0 10px;
+  
 }
 
 .nav-links a {
