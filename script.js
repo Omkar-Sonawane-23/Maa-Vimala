@@ -1,6 +1,9 @@
 // Declaring the variables
 let Input = document.getElementById("input_text");
 let Body = document.getElementById("body");
+let timeElement = document.getElementById('time');
+let dateElement = document.getElementById('date');
+
 let keynum;
 
 // Clearing the input value on load
@@ -226,109 +229,107 @@ function performImageSearchOnUnsplashes(search) {
     document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
     search = "";
 }
+// Get references to the DOM elements
+let timeElement = document.getElementById('time');
+let dateElement = document.getElementById('date');
+let weatherElement = document.getElementById('whether');
+let windElement = document.getElementById('wind');
 
-
+// Update the date in a readable format
 function updateRealTimeDate() {
-  var currentDate = new Date();
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  var formattedDate = currentDate.toLocaleDateString('en-US', options);
-
-  document.getElementById('date').innerHTML = formattedDate;
+    var currentDate = new Date();
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString('en-US', options);
+    dateElement.innerHTML = formattedDate;
 }
 
-// Call the function initially
-updateRealTimeDate();
-
-// Update the date every second
-setInterval(updateRealTimeDate, 1000);
-
+// Update the time in HH:MM:SS format
 function updateRealTimeTime() {
-  var currentTime = new Date();
-  var hours = currentTime.getHours();
-  var minutes = currentTime.getMinutes();
-  var seconds = currentTime.getSeconds();
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
 
-  // Add leading zero if necessary
-  hours = (hours < 10 ? "0" : "") + hours;
-  minutes = (minutes < 10 ? "0" : "") + minutes;
-  seconds = (seconds < 10 ? "0" : "") + seconds;
+    // Add leading zero if necessary
+    hours = (hours < 10 ? "0" : "") + hours;
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
 
-  var formattedTime = hours + ":" + minutes + ":" + seconds;
-  
-  document.getElementById('time').innerHTML =formattedTime;
+    var formattedTime = hours + ":" + minutes + ":" + seconds;
+    timeElement.innerHTML = formattedTime;
 }
 
-// Call the function initially
+// Call the functions initially
+updateRealTimeDate();
 updateRealTimeTime();
 
-// Update the time every second
+// Update the date and time every second
+setInterval(updateRealTimeDate, 1000);
 setInterval(updateRealTimeTime, 1000);
 
+// Fetch temperature from OpenWeatherMap API
 function fetchTemperature(latitude, longitude) {
-  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
-  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
-  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+    var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
+    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          var temperature = data.main.temp;
-          document.getElementById('whether').innerHTML = 'Current temperature is: ' + temperature + '°C';
-      })
-      .catch(error => {
-          console.error('Error fetching temperature:', error);
-      });
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            var temperature = data.main.temp;
+            weatherElement.innerHTML = 'Current temperature is: ' + temperature + '°C';
+        })
+        .catch(error => {
+            console.error('Error fetching temperature:', error);
+        });
 }
+
+// Fetch wind speed and direction from OpenWeatherMap API
 function fetchWind(latitude, longitude) {
-  // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
-  var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
-  var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+    var apiKey = 'd9a829013d78be9ac8e3d61d03f7b820';
+    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          var windSpeed = data.wind.speed;
-          var windDirection = data.wind.deg;
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            var windSpeed = data.wind.speed;
+            var windDirection = data.wind.deg;
 
-          // Convert wind direction to cardinal direction
-          var cardinalDirection = getCardinalDirection(windDirection);
+            // Convert wind direction to cardinal direction
+            var cardinalDirection = getCardinalDirection(windDirection);
 
-          document.getElementById('wind').innerHTML = 'Current wind speed is: ' + windSpeed + ' m/s, Direction: ' + cardinalDirection;
-      })
-      .catch(error => {
-          console.error('Error fetching wind:', error);
-      });
+            windElement.innerHTML = 'Current wind speed is: ' + windSpeed + ' m/s, Direction: ' + cardinalDirection;
+        })
+        .catch(error => {
+            console.error('Error fetching wind:', error);
+        });
 }
 
+// Convert degree to cardinal direction
 function getCardinalDirection(degree) {
-  var sectors = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-  var index = Math.round(degree / 45);
-  return sectors[index % 8];
+    var sectors = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+    var index = Math.round(degree / 45) % 8;
+    return sectors[index];
 }
 
-
+// Get the user's location and fetch weather data
 function getLocation() {
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-          var latitude = position.coords.latitude;
-          var longitude = position.coords.longitude;
-          fetchTemperature(latitude, longitude);
-          fetchWind(latitude,longitude);
-      }, error => {
-          console.error('Error getting location:', error);
-      });
-  } else {
-      console.error('Geolocation is not supported by this browser.');
-  }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            fetchTemperature(latitude, longitude);
+            fetchWind(latitude, longitude);
+        }, error => {
+            console.error('Error getting location:', error);
+        });
+    } else {
+        console.error('Geolocation is not supported by this browser.');
+    }
 }
 
-// Call the function to get location and fetch temperature
+// Call the function to get location and fetch weather data
 getLocation();
 
-// Update the temperature every 5 minutes (300000 milliseconds)
+// Update the temperature and wind every 5 minutes (300000 milliseconds)
 setInterval(getLocation, 300000);
-
-
-
-
 
