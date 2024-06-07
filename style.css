@@ -1,14 +1,16 @@
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    color: #ddd;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
+  background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  color: #ddd;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-color: #333;
+  padding: 10px;
+  padding-bottom: 100px; /* Adjust as needed to avoid overlapping with footer */
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 }
-
 /*#logoName{
   font-size: 2rem;
   font-weight: 600;
@@ -231,8 +233,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin:0;
 }
-/* Navbar Styling */
-nav {
+/* Navbar Styling */nav {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   padding: 1rem 0;
@@ -464,14 +465,17 @@ button {
 }
 
   @media screen and (max-width: 600px){
-    body{
-        background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-        color: #ddd;
-        background-repeat: no-repeat;
-        background-size:100vh;
-        background-color: #fcfcfc;
-        padding: 10px;
-    }
+    body {
+      background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      color: #ddd;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center bottom;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Poppins", sans-serif;
+  }
     .search-bar {
       position: absolute;
       font-size: 1.5rem;
@@ -491,4 +495,91 @@ button {
   .fa-magnifying-glass:before, .fa-search:before {
     content: "\f002";
     margin-left: 90px;
+
+}
+
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-content {
+  flex: 1 1 100%;
+  max-width: 300px;
+  margin-right: 20px;
+}
+
+.footer-section {
+  margin-bottom: 1%;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-info li i {
+  margin-right: 10px;
+}
+
+.social-links {
+  flex: 1 1 100%;
+  max-width: 200px;
+}
+
+.social-links h3 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links ul li {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.social-links a i {
+  margin-right: 10px;
+}
+
+.social-links a:hover {
+  color: #ffcc00; /* Hover color for social media links */
+}
+
+.footer-bottom {
+  flex: 1 1 100%;
+  text-align: center;
+  margin-top: 30px;
 }
