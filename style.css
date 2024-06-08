@@ -1,3 +1,155 @@
+.header h1 {
+    position: fixed;
+    top: 110px; /* Adjust as needed */
+    left: 35px; /* Adjust as needed */
+    margin: 0; /* Remove default margin */
+    font-size: 2rem; /* Adjust font size */
+    color: #fff; /* Set color */
+    z-index: 999; /* Ensure it's above other content */
+}
+
+/*Setting style*/
+#settings-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Icon styles */
+#settings-btn i {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+/*Setting popup*/
+.popup {
+    display: none;
+    position: fixed;
+    bottom: calc(100% + 10px);
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    z-index: 999;
+}
+
+.show {
+    display: contents;
+}
+
+/* background styling */
+#background-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-direction: row;
+}
+
+.bg-option {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.bg-option:hover {
+    border-color: #fff; /* Change border color on hover */
+}
+
+/*styling change background*/
+#change-bg-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+
+#change-bg-btn {
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.background-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.container{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.btn{
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn:active{
+    transform: scale(0.96);
+}
+
+.url_popup{
+    width: 400px;
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 60px;
+    color: #333333;
+    visibility: hidden;
+}
+
+.url_popup button{
+    width: 100%;
+    height: 30px;
+    margin-top: 50px;
+    background-color: darkslategrey;
+    color: white;
+    border-radius: 4px;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 body {
     background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     color: #ddd;
@@ -56,7 +208,7 @@ input {
     font-size: 30px;
     outline: none;
     caret-color: palevioletred;
-    
+
 }
 button {
     width: 85px;
@@ -137,9 +289,12 @@ button {
   }
 
   .search-bar {
+    /*position: fixed;*/
     background-color: transparent;
     color: white;
     width: 4.5vw;
+    /*top: 59%;*/
+    /*right: 50%;*/
     padding: 10px;
     border: none;
     border-radius: 25px;
@@ -150,7 +305,7 @@ button {
   .search-icon {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 15%;
     transform: translateY(-50%);
     cursor: pointer;
     border: none;

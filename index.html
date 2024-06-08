@@ -2,30 +2,47 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Maa-Vimala</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body id="body">
-        <header>
-            <nav class="navbar">
-                <h1 id="logoName">Maa-Vimala</h1>
-                <ul class="nav-links">
-                    <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
-                    <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
-                    <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
-                    <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="#contact">  Contact Us  </a></li>
-                </ul>
-            </nav>
-        </header>
-    <!-- <div>
+
+<div>
+    <!-- Settings button with icon -->
+    <button id="settings-btn"><i class="fas fa-cog"></i></button>
+
+    <!-- Change Background button -->
+    <div id="settings-popup" class="popup">
+        <div id="change-bg-section" class="background-controls">
+            <button id="change-bg-btn">Change Background</button>
+        </div>
+        <div id="background-options" class="background-options">
+            <img src="images/default-image.jpg" alt="Default Background" class="bg-option">
+            <img src="images/image1.jpg" alt="Background Image 1" class="bg-option">
+            <img src="images/image2.jpg" alt="Background Image 2" class="bg-option">
+            <img src="images/image3.jpg" alt="Background Image 3" class="bg-option">
+            <img src="images/image4.jpg" alt="Background Image 4" class="bg-option">
+            <img src="images/image5.jpg" alt="Background Image 5" class="bg-option">
+            <img src="images/image6.jpg" alt="Background Image 6" class="bg-option">
+            <img src="images/image7.jpg" alt="Background Image 7" class="bg-option">
+            <img src="images/image8.jpg" alt="Background Image 8" class="bg-option">
+            <img src="images/image9.jpg" alt="Background Image 9" class="bg-option">
+            <img src="images/image10.jpg" alt="Background Image 10" class="bg-option">
+        </div>
+        <div class="container">
+            <button type="submit" class="btn" onclick="openPopup()">Custom Background</button>
+            <div class="url_popup" id="url_popup">
+                <label for="customBackgroundUrl"></label>
+                <input type="text" id="customBackgroundUrl" class="search-bar" placeholder="Enter the URL:">
+                <button type="button" onclick="closePopup()" id="applyCustomBackground">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Maa-Vimala</h1>
         <div class="nav-info">
             <p id="time">22 : 33 AM</p>
             <div class="nav-info-ele">
@@ -35,15 +52,20 @@
                     <span id="wind">Wind : 17.65</span>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
+</div>
+
+
+<body id="body">
     <div>
         <div>
             <div>
-                <h1 id="search-txt">Start Typing To Search...</h1>
+                <h1>Start Typing To Search...</h1>
             </div>
             <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
+                <label for="input_text"></label>
                 <input type="text" id="input_text" class="search-bar" placeholder="">
                 <i class="fas fa-search search-icon"></i>
             </div>
