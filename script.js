@@ -40,6 +40,9 @@ document.addEventListener("click", function(event) {
 
 let Input = document.getElementById("input_text");
 let Body = document.getElementById("body");
+let timeElement = document.getElementById('time');
+let dateElement = document.getElementById('date');
+
 let keynum;
 Input.value = "";
 
@@ -225,3 +228,19 @@ function performImageSearchOnUnsplashes(search) {
   document.location = `https://unsplash.com/s/photos/${encodeURIComponent(search)}`
   search = "";
 }
+function updateTime() {
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth();
+  const year = currentDate.getFullYear();
+  const hour = currentDate.getHours();
+  const minute = currentDate.getMinutes();
+  const timeString = (hour % 12 || 12) + " : " + (minute < 10 ? '0' : '') + minute + " " + (hour < 12 ? 'AM' : 'PM');
+  const dateString = day + " " + ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][month] + " " + year;
+  timeElement.innerText = timeString;
+  dateElement.innerText = dateString;
+}
+
+// Initial call to set time and date, and then update every minute
+updateTime();
+setInterval(updateTime, 60000);
