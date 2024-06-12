@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Corrected box-sizing property */
+}
+
+/* Navbar Styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    margin: 0;
+    padding: 15px;
+  }
+  .navbar h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+   .navbar .nav-links li i {
+       color: #fff;
+          
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00; /* Highlight color on hover */
+  }
+  
+  /* Responsive Navbar for Mobile */
+  @media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+  
+    .nav-links li {
+        margin: 10px 0;
+    }
+  }
+body {
+    background-image: url('contact.bagrounf.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.contact-box {
+    width: 90%;
+    max-width: 500px;
+    height: auto; /* Adjust to auto height for better responsiveness */
+    background-color: rgb(242, 230, 242);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Corrected spelling from "centre" to "center" */
+    align-items: center;
+    padding: 20px; /* Added padding for inner spacing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slide-in 1s forwards;
+}
+
+.contact-box div {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.contact-box input{
+    background-color: lightgray;
+}
+
+.contact-box i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #bbb;
+}
+
+.contact-box input, .contact-box textarea {
+    width: 100%;
+    padding: 20px 20px 20px 40px; /* Adjusted padding for input/textarea */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    font-size: 18px;
+}
+
+textarea {
+    resize: none;
+    height: 150px; /* Set height for textarea */
+    background-color: lightgrey;
+}
+
+button {
+    width: 100%;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 40px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.message {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.message .success, .message .problem {
+    font-size: 20px;
+    position: absolute;
+    animation: button 0.3s linear;
+    display: none;
+}
+
+.message .success {
+    color: green;
+}
+
+.message .problem {
+    color: red;
+}
+
+@keyframes button {
+    0% { transform: scale(0.1); }
+    50% { transform: scale(0.5); }
+    100% { transform: scale(1); }
+}
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .contact-box {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-box {
+        width: 60%;
+    }
+}
+
