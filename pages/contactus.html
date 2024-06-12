@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="contactus.css">
+    <title>contat us</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 id="logoName">Maa-Vimala</h1>
+            <ul class="nav-links">
+                <li><i class="fa-solid fa-house"></i><a href="index.html">  Home  </a></li>
+                <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
+                <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
+                <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
+                <li><i class="fa-solid fa-envelope"></i><a href="pages\contactus.html">  Contact Us  </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-box">
+        
+        <h1>Let's get in touch!</h1>
+        <div class="name" >
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="username" id="name">
+        </div>
+        <div class="email">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="email" id="email">
+        </div>
+        <div class="message-box">
+            <textarea placeholder="message" id="message-box" cols="30" rows="10"></textarea>   
+        </div>
+        <div class="button">
+            <button onclick="message()">send</button>
+        </div>
+        <div class="message" >
+            <div class="success" id="success">
+                Message send successfully!
+            </div>
+            <div class="problem" id="problem">
+                Fields can't be empt!
+            </div>
+        </div>      
+    </div>
+    <!-- Link to the external JavaScript file -->
+    <script src="submit.js"></script>
+</body>
+</html>
