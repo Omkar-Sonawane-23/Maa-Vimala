@@ -1,6 +1,6 @@
-<h2 align="center" style="font-size: 24px;"> Maa-Vimala </h2>
+<h2 align="center" style="font-size: 30px;"> Maa-Vimala </h2>
 
-### Calling all keyboard enthusiasts! 🚀 Ever wish you could conquer the digital realm without lifting a finger off your beloved keys? Well, say hello to our latest creation—a game-changing tool for developers who live for the thrill of a keyboard shortcut.
+### Calling all the keyboard enthusiasts! 🚀 Ever wish you could conquer the digital realm without lifting a finger off your beloved keys? Well, say hello to our latest creation—a game-changing tool for developers who live for the thrill of a keyboard shortcut.
 
 ## Features
 
@@ -16,19 +16,13 @@
 
 ## How To Add This on a New Tab
 
-git clone https://github.com/Web403/Maa-Vimala
+1. git clone https://github.com/Omkar-Sonawane-23/Maa-Vimala.git
 
-path/to/Maa-Vimala/index.html
-Go To Browser -> Setting search for Home page
-set to Custom Url
-Paste your Path To Index File.
-
-## Contributing
-
-Pull requests are welcome.
-Read Contribute.md File First
-For major changes, please open an issue first to discuss what you would like to change.
-
+2. Copy-path/to/Maa-Vimala/index.html
+3. Go To Browser -> Setting
+4. Search for Homepage
+5. Select to Custom Url
+6. Paste the path to the index.html file
 
 ## How To Use It?
 
@@ -40,10 +34,12 @@ For major changes, please open an issue first to discuss what you would like to 
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- Pull requests are welcome.
 
-Please make sure to update tests as appropriate.
+- Read the [Contribute.md](https://github.com/Omkar-Sonawane-23/Maa-Vimala/blob/main/Contribute.md) file first
+- For major changes, please open an issue first to discuss what you would like to change.
+- Please make sure to update tests as appropriate.
 
     
-# Join the Discord
-https://discord.gg/uD7x8Mah
+## Join our Discord Server
+Here's your [invite](https://discord.gg/uD7x8Mah)!
