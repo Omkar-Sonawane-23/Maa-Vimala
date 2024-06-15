@@ -146,6 +146,9 @@ button {
     font-size: 2rem;
     outline: none;
   }
+  .search-bar::placeholder {
+    color: white /* Placeholder text color */
+}
 
   .search-icon {
     position: absolute;
@@ -155,8 +158,11 @@ button {
     cursor: pointer;
     border: none;
     color: rgb(255, 255, 255);
+    transition: color 0.3s ease;
   }
-
+  .search-icon:hover {
+    color: #b469b2; /* Icon color on hover */
+}
 .nav-info{
   position: absolute;
   right: 35px;
@@ -185,10 +191,23 @@ button {
   position: absolute;
   bottom: 0;
 }
-#link a{
-  /* text-decoration: none; */
-  color: #1b1c6d;
 
+#link a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(184, 23, 125, 0.624); /* Semi-transparent background color */
+  color: #fff; /* Button text color (white in this example) */
+  text-decoration: none; /* Remove underline */
+  border: 2px solid rgba(184, 23, 125, 0.7); /* Border color matching the background */
+  border-radius: 5px; /* Rounded corners */
+  backdrop-filter: blur(10px); /* Apply blur effect to the background */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+
+#link a:hover {
+  background-color: rgba(131, 47, 129, 0.9); /* Darker background color on hover */
+  border-color: rgba(131, 47, 129, 0.9); /* Darker border color on hover */
 }
 
   @media screen and (max-width: 600px){
