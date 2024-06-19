@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: url(./Main_img.jpg);
     color: #ddd;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,10 +9,11 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/*#logoName{
+
+.logoName{
   font-size: 2rem;
   font-weight: 600;
-}*/
+}
 
 .container {
   display:grid;
@@ -130,6 +131,7 @@ button {
     100% { transform: rotate(360deg); }
   }
 
+  
   .search-container {
     position: relative;
     border-bottom: 2px solid rgb(196, 196, 196);
@@ -193,7 +195,7 @@ button {
 
   @media screen and (max-width: 600px){
     body{
-        background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-image: url(./Main_img.jpg);
         color: #ddd;
         background-repeat: no-repeat;
         background-size:100vh;
@@ -221,7 +223,7 @@ button {
     margin-left: 90px;
 }
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: url('./Main_img.jpg');
     color: #ddd;
     background-repeat: no-repeat;
     background-size: cover;
@@ -465,7 +467,7 @@ button {
 
   @media screen and (max-width: 600px){
     body{
-        background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-image: url('./Main_img.jpg');
         color: #ddd;
         background-repeat: no-repeat;
         background-size:100vh;
