@@ -309,6 +309,12 @@ nav {
   margin:0;
 }
 
+#logoName:hover{
+  transform: scale(1.3);
+  color: antiquewhite;
+}
+
+
 #search-txt{
   font-size: 2rem;
   font-weight: 300;
