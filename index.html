@@ -12,20 +12,21 @@
     <title>Maa-Vimala</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body id="body">
+<body id="body" style="background-image:url(https://images.unsplash.com/photo-1717799513336-b9b42139d79d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
         <header>
             <nav class="navbar">
                 <h1 id="logoName">Maa-Vimala</h1>
                 <ul class="nav-links">
-                    <li><i class="fa-solid fa-house"></i><a href="#home">  Home  </a></li>
-                    <li><i class="fa-solid fa-info-circle"></i><a href="#about">  About Us  </a></li>
+                    <li><i class="fa-solid fa-house"></i><a href="home.html">  Home  </a></li>
+                    <li><i class="fa-solid fa-info-circle"></i><a href="about.html">  About Us  </a></li>
                     <li><i class="fa-solid fa-concierge-bell"></i><a href="#services">  Services  </a></li>
-                    <li><i class="fa-solid fa-star"></i><a href="#reviews">  Reviews  </a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="#contact">  Contact Us  </a></li>
+                    <li><i class="fa-solid fa-star"></i><a href="review.html">  Reviews  </a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="contact.html">  Contact Us  </a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">  Read Me </a></li>
                 </ul>
             </nav>
         </header>
-    <!-- <div>
+    <div>
         <div class="nav-info">
             <p id="time">22 : 33 AM</p>
             <div class="nav-info-ele">
@@ -35,7 +36,7 @@
                     <span id="wind">Wind : 17.65</span>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
     <div>
         <div>
@@ -44,12 +45,28 @@
             </div>
             <!-- <input type="text" name="" id="input_text"> -->
             <div class="search-container">
-                <input type="text" id="input_text" class="search-bar" placeholder="">
+                <input type="text" id="input_text" class="search-bar" placeholder="" style="width: 36.5vw;transition: width 0.2s ease-in-out 0s;">
                 <i class="fas fa-search search-icon"></i>
             </div>
         </div>
         <div>
             <ul id="content" class="max-h-[300px] overflow-y-scroll">
+                <div id="button_container">
+                <button id="Munai"><a href="https://www.youtube.com/"><img src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg" alt="YouTube Logo"></a></button>
+
+
+                <button id="Munai"><a href="https://www.google.com/"><img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo"></a></button>
+
+                <button id="Munai"><a href="https://www.wikipedia.org/"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/103px-Wikipedia-logo-v2.svg.png" alt="Wikipedia Logo"></a> </button>
+                </div>
+
+
+                
+
+
+
+                
+
                 <!-- <li>Search On<div>
                         <i class="fa fa-google"></i>
                         <i class="fa fa-youtube"></i>
@@ -57,15 +74,19 @@
                 <li>Wikipedia</li>
                 <li>Maths</li>
                 <li>Word Search</li> -->
+
             </ul>
         </div>
         <div id="loader"></div>
         <div class="result" id="result">
         </div>
         <div id="link">
-            <a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md">Read Me</a>
+            <button class="tunai"><a href="https://github.com/Web403/Maa-Vimala/blob/main/README.md" >Read Me</a></button>
         </div>
     </div>
+    <footer>
+        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+    </footer>
     <script>
         let time = document.getElementById('time');
         let date = document.getElementById('date');
