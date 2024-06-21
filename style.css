@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    
     color: #ddd;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,6 +73,7 @@ button {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+
     /* border: 1px solid black; */
 
 }
@@ -188,12 +189,14 @@ button {
 #link a{
   /* text-decoration: none; */
   color: #1b1c6d;
+  text-decoration:solid;
 
 }
 
   @media screen and (max-width: 600px){
     body{
         background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-attachment: fixed;
         color: #ddd;
         background-repeat: no-repeat;
         background-size:100vh;
@@ -456,10 +459,12 @@ button {
   font-size: 1.5rem;
   position: absolute;
   bottom: 0;
+  text-align: center;
 }
 #link a{
   /* text-decoration: none; */
   color: #1b1c6d;
+  text-align: center;
 
 }
 
@@ -479,6 +484,7 @@ button {
       right: -5rem;
       color: white;
       border-bottom: 2px solid white;
+      
     }
     .search-icon {
       visibility: hidden;
@@ -492,3 +498,49 @@ button {
     content: "\f002";
     margin-left: 90px;
 }
+
+.tunai{
+  background-color: #4CAF50;
+   border: none; 
+   color: white; 
+   padding: 15px 32px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+     font-size: 16px;
+      margin: 4px 2px; 
+      cursor: pointer; 
+      border-radius: 50px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#button_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #333; /* Border around the button container */
+  padding: 30px; /* Padding inside the button container */
+}
+
+#button_container button {
+  display: inline-flex;
+  border: 1px solid #999; /* Border around each button */
+  border-radius: 5px; /* Rounded corners for buttons */
+  overflow: hidden; /* Hide overflow content (like long text) */
+  padding-bottom: 30px;
+}
+
+#button_container button:hover {
+  border-color: #555; /* Change border color on hover */
+}
+
+#button_container img {
+  width: 100px; /* Adjust image size if needed */
+  height: auto;
+ 
+}
+
+
+
+
+
+
