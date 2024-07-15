@@ -6,6 +6,26 @@ let dateElement = document.getElementById('date');
 let keynum;
 Input.value = "";
 
+const images = [
+  'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=600',
+  'https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&w=600',
+  'https://images.pexels.com/photos/130847/pexels-photo-130847.jpeg?auto=compress&cs=tinysrgb&w=600',
+  'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  
+];
+
+
+function getRandomImage() {
+  const randomIndex = Math.floor(Math.random() * images.length);
+  return images[randomIndex];
+}
+
+
+document.body.style.backgroundImage = `url('${getRandomImage()}')`;
+
+
 Body.addEventListener("keydown", function (e) {
   const searchcontainer = document.getElementsByClassName("search-bar")[0];
   if (event.key.length === 1 && event.key.match(/[a-z0-9]/i)) {
